@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource-variable/space-grotesk':
+    specifier: ^5.0.13
+    version: 5.0.13
   astro:
     specifier: ^3.2.4
     version: 3.2.4
@@ -695,6 +698,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/space-grotesk@5.0.13:
+    resolution: {integrity: sha512-XZzmOrO30wUG7fIOM9Fl6y+FHOA8KZOSSa4PkcHUseX/mt6nmPStTD1WhE9JcDVrSFGl3rF69so10Prpg/+RBw==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

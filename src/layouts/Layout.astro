@@ -1,16 +1,17 @@
 ---
+import '@fontsource-variable/space-grotesk';
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Positivus - Navigating the digital landscape for success" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -22,30 +23,62 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--primary: #B9FF66;
+		--secondary: #191A23;
+		--muted: #F3F3F3;
+		--background: #fff;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: 'Space Grotesk Variable', sans-serif;
+		background: var(--background);
+		color: var(--secondary);
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	h1 {
+		font-size: 60px;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: 40px;
+		font-weight: 500;
+	}
+
+	h3 {
+		font-size: 30px;
+		font-weight: 500;
+	}
+
+	h4 {
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	h5 {
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+	@media only screen and (max-width: 768px) {
+		h1 {
+			font-size: 43px;
+		}
+
+		h2 {
+			font-size: 36px;
+		}
+		
+		h3 {
+			font-size: 26px;
+		}
+
+		h4 {
+			font-size: 18px;
+		}
+
+		h5 {
+			font-size: 16px;
+		}
 	}
 </style>
