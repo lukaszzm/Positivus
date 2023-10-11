@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon"
+
+interface Props {
+    isActive: boolean;
+}
+
+const { isActive } = Astro.props 
+---
+
+<button>
+    {isActive ? <Icon name="fa-solid:plus" class="icon" /> : <Icon name="fa-solid:minus" class="icon" />
+}
+</button>
+
+<style>
+    button {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 1px solid var(--secondary);
+        background-color: var(--background);
+        transition-duration: .2s;
+    }
+
+    button:hover {
+        background-color: var(--primary);
+    }
+
+    .icon {
+        padding: 5px;
+    }
+</style>
