@@ -1,4 +1,5 @@
 ---
+import Link from '../components/Link.astro';
 import PlusIcon from '../components/PlusIcon.astro';
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon';
@@ -14,6 +15,36 @@ import { Icon } from 'astro-icon';
 		<div>
 		<PlusIcon isActive={true} />
 		<PlusIcon isActive={false} />
+	</div>
+	<div class="grid">
+		<Link href="/" variant='primary' textColor="background" iconColor='color-6'>
+			Link
+		</Link>
+		<Link href="/" variant='primary' textColor="background" iconColor='color-5'>
+			Link
+		</Link>
+		<Link href="/" variant='primary' textColor="secondary" iconColor='color-4'>
+			Link
+		</Link>
+		<Link href="/" variant='primary' textColor="secondary" iconColor='color-3'>
+			Link
+		</Link>
+		<Link href="/" variant='primary' textColor="primary" iconColor='color-2'>
+			Link
+		</Link>
+		<Link href="/" variant='primary' textColor="primary" iconColor='color-1'>
+			Link
+		</Link>
+
+		<Link href="/" variant='secondary' textColor="primary" iconColor='color-6'>
+			Link
+		</Link>
+		<Link href="/" variant='secondary' textColor="secondary" iconColor='color-5'>
+			Link
+		</Link>
+		<Link href="/" variant='secondary' textColor="background" iconColor='color-4'>
+			Link
+		</Link>
 	</div>
 		<div>
 		<Icon name="logo" style="max-width: 500px" />
@@ -41,5 +72,10 @@ import { Icon } from 'astro-icon';
 		border-bottom: 2px solid black;
 		display: flex;
 		gap: 12px;
+	}
+
+	.grid {
+		flex-direction: column;
+		background-color: gray;
 	}
 </style>

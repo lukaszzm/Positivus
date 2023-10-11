@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon"
+
+interface Props {
+    variant: "primary" | "secondary"
+    href: string
+    textColor: "primary" | "secondary" | "background"
+    iconColor: "color-1" | "color-2" | "color-3" | "color-4" | "color-5" | "color-6"
+}
+
+const { variant, textColor, iconColor, href } = Astro.props
+---
+
+{ variant === "primary" ? (
+    <a href={href} class={textColor}>
+        <Icon name="mi:arrow-right-up" class={`icon-1  ${iconColor}`}  />   
+        <span>
+            <slot />
+        </span> 
+    </a>
+) : (
+    <a href={href} class={textColor}>
+        <span>
+            <slot />    
+        </span>
+        <Icon name="mi:arrow-right-up" class='icon-2' />
+    </a>
+)}
+
+<style>
+    a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+        width: auto;
+        max-width: 100px;
+        text-decoration: none;
+        position: relative;
+        &:after {
+		    content: "";
+		    display: block;
+		    position: absolute;
+		    width: 0;
+		    bottom: 0;
+		    height: 2px;
+		    margin: -5px 0;
+		    left: 0;
+		    transition: all 0.2s ease-in 0s;
+	    }
+	    &:hover:after {
+		    width: 100%;
+	    }
+    }
+
+    .icon-1 {
+        width: 41px;
+        height: 41px;
+        border-radius: 50%;
+        background-color: var(--primary);
+    }
+
+    .icon-2 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .primary {
+        color: var(--primary);
+        &:after {
+            background-color: var(--primary);
+        }
+    }
+
+    .secondary {
+        color: var(--secondary);
+        &:after {
+            background-color: var(--secondary);
+        }
+    }
+
+    .background {
+        color: var(--background);
+        &:after {
+            background-color: var(--background);
+        }
+    }
+
+    .color-1 {
+        background-color: var(--primary);
+        color: var(--background);
+    }
+
+    .color-2 {
+        background-color: var(--primary);
+        color: var(--secondary);
+    }
+
+    .color-3 {
+        background-color: var(--secondary);
+        color: var(--background);
+    }
+
+    .color-4 {
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+    .color-5 {
+        background-color: var(--background);
+        color: var(--secondary);
+    }
+
+    .color-6 {
+        background-color: var(--background);
+        color: var(--primary);
+    }
+</style>
