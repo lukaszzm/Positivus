@@ -8,6 +8,7 @@ interface Props {
 
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -25,20 +26,21 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--primary: #B9FF66;
-		--secondary: #191A23;
-		--muted: #F3F3F3;
+		--primary: #b9ff66;
+		--secondary: #191a23;
+		--muted: #f3f3f3;
 		--background: #fff;
 	}
 
 	* {
-  		box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 	html {
 		font-family: 'Space Grotesk Variable', sans-serif;
 		background: var(--background);
 		color: var(--secondary);
+		scroll-behavior: smooth;
 	}
 
 	h1 {
@@ -74,7 +76,7 @@ const { title } = Astro.props;
 		h2 {
 			font-size: 36px;
 		}
-		
+
 		h3 {
 			font-size: 26px;
 		}

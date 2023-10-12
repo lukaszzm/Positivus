@@ -1,9 +1,12 @@
 ---
+import Button from '../elements/Button.astro';
 import Card from '../elements/Card.astro';
 import SectionLabel from '../elements/SectionLabel.astro';
+import { Icon } from 'astro-icon';
+import Proposal from './Proposal.astro';
 ---
 
-<section id="cards">
+<section id="services">
 	<SectionLabel
 		title="Services"
 		description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
@@ -23,10 +26,12 @@ import SectionLabel from '../elements/SectionLabel.astro';
 			<Card title="Analytics and Tracking" icon="analytics" href="" bgColor="secondary" headingVariant="primary" />
 		</div>
 	</div>
+
+	<Proposal />
 </section>
 
 <style>
-	#cards {
+	#services {
 		width: 100%;
 		padding: 0 100px;
 		margin: 50px 0;
