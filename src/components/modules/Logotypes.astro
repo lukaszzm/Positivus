@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon"
+---
+
+<div id="logotypes">
+    <Icon name="amazon-logo" />
+    <Icon name="dribble-logo" />
+    <Icon name="hubspot-logo" />
+    <Icon name="notion-logo" />
+    <Icon name="netflix-logo" />
+    <Icon name="zoom-logo" />
+</div>
+
+<style>
+    #logotypes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 100px;
+        gap: 100px;
+    }
+
+    @media only screen and (max-width: 1279px) {
+        #logotypes {
+            gap: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 1023px) {
+        #logotypes {
+            display: none;
+        }
+    }
+</style>

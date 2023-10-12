@@ -1,116 +1,117 @@
 ---
-import { Icon } from "astro-icon"
+import { Icon } from 'astro-icon';
 
 interface Props {
-    variant: "primary" | "secondary" | "no-icon"
-    href: string
-    textColor: "primary" | "secondary" | "background"
-    iconColor: "color-1" | "color-2" | "color-3" | "color-4" | "color-5" | "color-6"
+	variant: 'primary' | 'secondary' | 'no-icon';
+	href: string;
+	textColor: 'primary' | 'secondary' | 'background';
+	iconColor: 'color-1' | 'color-2' | 'color-3' | 'color-4' | 'color-5' | 'color-6';
 }
 
-const { variant, textColor, iconColor, href } = Astro.props
+const { variant, textColor, iconColor, href } = Astro.props;
 ---
 
-{ variant === "primary" ? (
-    <a href={href} class={textColor}>
-        <Icon name="mi:arrow-right-up" class={`icon-1  ${iconColor}`}  />   
-        <span>
-            <slot />
-        </span> 
-    </a>
-) : (
-    <a href={href} class={textColor}>
-        <span>
-            <slot />    
-        </span>
-        {variant !== "no-icon" && <Icon name="mi:arrow-right-up" class='icon-2' />}
-    </a>
-)}
+{
+	variant === 'primary' ? (
+		<a href={href} class={textColor}>
+			<Icon name="mi:arrow-right-up" class={`icon-1  ${iconColor}`} />
+			<span>
+				<slot />
+			</span>
+		</a>
+	) : (
+		<a href={href} class={textColor}>
+			<span>
+				<slot />
+			</span>
+			{variant !== 'no-icon' && <Icon name="mi:arrow-right-up" class="icon-2" />}
+		</a>
+	)
+}
 
 <style>
-    a {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 20px;
-        width: auto;
-        max-width: 100px;
-        text-decoration: none;
-        position: relative;
-        &:after {
-		    content: "";
-		    display: block;
-		    position: absolute;
-		    width: 0;
-		    bottom: 0;
-		    height: 2px;
-		    margin: -5px 0;
-		    left: 0;
-		    transition: all 0.2s ease-in 0s;
-	    }
-	    &:hover:after {
-		    width: 100%;
-	    }
-    }
+	a {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		font-size: 20px;
+		width: auto;
+		text-decoration: none;
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 0;
+			bottom: 0;
+			height: 2px;
+			margin: -5px 0;
+			left: 0;
+			transition: all 0.2s ease-in 0s;
+		}
+		&:hover:after {
+			width: 100%;
+		}
+	}
 
-    .icon-1 {
-        width: 41px;
-        border-radius: 50%;
-        background-color: var(--primary);
-    }
+	.icon-1 {
+		width: 41px;
+		border-radius: 50%;
+		background-color: var(--primary);
+	}
 
-    .icon-2 {
-        width: 40px;
-    }
+	.icon-2 {
+		width: 40px;
+	}
 
-    .primary {
-        color: var(--primary);
-        &:after {
-            background-color: var(--primary);
-        }
-    }
+	.primary {
+		color: var(--primary);
+		&:after {
+			background-color: var(--primary);
+		}
+	}
 
-    .secondary {
-        color: var(--secondary);
-        &:after {
-            background-color: var(--secondary);
-        }
-    }
+	.secondary {
+		color: var(--secondary);
+		&:after {
+			background-color: var(--secondary);
+		}
+	}
 
-    .background {
-        color: var(--background);
-        &:after {
-            background-color: var(--background);
-        }
-    }
+	.background {
+		color: var(--background);
+		&:after {
+			background-color: var(--background);
+		}
+	}
 
-    .color-1 {
-        background-color: var(--primary);
-        color: var(--background);
-    }
+	.color-1 {
+		background-color: var(--primary);
+		color: var(--background);
+	}
 
-    .color-2 {
-        background-color: var(--primary);
-        color: var(--secondary);
-    }
+	.color-2 {
+		background-color: var(--primary);
+		color: var(--secondary);
+	}
 
-    .color-3 {
-        background-color: var(--secondary);
-        color: var(--background);
-    }
+	.color-3 {
+		background-color: var(--secondary);
+		color: var(--background);
+	}
 
-    .color-4 {
-        background-color: var(--secondary);
-        color: var(--primary);
-    }
+	.color-4 {
+		background-color: var(--secondary);
+		color: var(--primary);
+	}
 
-    .color-5 {
-        background-color: var(--background);
-        color: var(--secondary);
-    }
+	.color-5 {
+		background-color: var(--background);
+		color: var(--secondary);
+	}
 
-    .color-6 {
-        background-color: var(--background);
-        color: var(--primary);
-    }
+	.color-6 {
+		background-color: var(--background);
+		color: var(--primary);
+	}
 </style>

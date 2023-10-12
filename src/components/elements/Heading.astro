@@ -1,35 +1,54 @@
 ---
 interface Props {
-    variant?: 'primary' | 'secondary' | "tertiary"
+	variant?: 'primary' | 'secondary' | 'tertiary';
+	as?: 'h2' | 'h3';
 }
 
-const { variant = "primary" } = Astro.props
+const { variant = 'primary', as = 'h2' } = Astro.props;
 ---
 
-<h2 class={variant}>
-    <slot />
-</h2>
+{
+	as === 'h2' ? (
+		<h2 class={variant}>
+			<slot />
+		</h2>
+	) : (
+		<h3 class={variant}>
+			<slot />
+		</h3>
+	)
+}
 
 <style>
-    h2 {
-        display: flex;
-        padding: 0px 7px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        border-radius: 7px;
-    }
+	h2 {
+		display: flex;
+		padding: 0px 7px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		border-radius: 7px;
+	}
 
-    .primary {
-        background-color: var(--primary);
-    }
+	h3 {
+		display: flex;
+		padding: 0px 7px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		border-radius: 7px;
+		margin: 0;
+	}
 
-    .secondary {
-        background-color: var(--background);
-    }
+	.primary {
+		background-color: var(--primary);
+	}
 
-    .tertiary {
-        background-color: var(--secondary);
-        color: var(--background);
-    }
+	.secondary {
+		background-color: var(--background);
+	}
+
+	.tertiary {
+		background-color: var(--secondary);
+		color: var(--background);
+	}
 </style>

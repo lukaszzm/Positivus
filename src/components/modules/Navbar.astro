@@ -1,65 +1,65 @@
 ---
-import { Icon } from "astro-icon"
-import Link from "../elements/Link.astro";
-import Button from "../elements/Button.astro";
-import HamburgerMenu from "../elements/HamburgerMenu.astro"
+import { Icon } from 'astro-icon';
+import Link from '../elements/Link.astro';
+import Button from '../elements/Button.astro';
+import HamburgerMenu from '../elements/HamburgerMenu.astro';
 ---
 
 <nav>
-    <a href="/" id="logo">
-        <Icon name="logo" />
-    </a>
+	<a href="/" id="logo">
+		<Icon name="logo" />
+	</a>
 
-    <div id="menu">
-        <Link href="#about" variant="no-icon" textColor="secondary" iconColor="color-1">About us</Link>
-        <Link href="#services" variant="no-icon" textColor="secondary" iconColor="color-1">Services</Link>
-        <Link href="#useCases" variant="no-icon" textColor="secondary" iconColor="color-1">Use cases</Link>
-        <Link href="#pricing" variant="no-icon" textColor="secondary" iconColor="color-1">Pricing</Link>
-        <Link href="#blog" variant="no-icon" textColor="secondary" iconColor="color-1">Blog</Link>
-        <Button variant="secondary">Request a quote</Button>
-    </div>
+	<div id="menu">
+		<Link href="#about" variant="no-icon" textColor="secondary" iconColor="color-1">About us</Link>
+		<Link href="#services" variant="no-icon" textColor="secondary" iconColor="color-1">Services</Link>
+		<Link href="#useCases" variant="no-icon" textColor="secondary" iconColor="color-1">Use cases</Link>
+		<Link href="#pricing" variant="no-icon" textColor="secondary" iconColor="color-1">Pricing</Link>
+		<Link href="#blog" variant="no-icon" textColor="secondary" iconColor="color-1">Blog</Link>
+		<Button variant="secondary">Request a quote</Button>
+	</div>
 
-    <HamburgerMenu />
+	<HamburgerMenu />
 </nav>
 
 <style>
-    nav {
-        width: full;
-        max-width: 1440px;
-        margin-top: 60px;
-        padding: 0px 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+	nav {
+		width: full;
+		max-width: 1440px;
+		margin-top: 60px;
+		padding: 0px 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-    #logo {
-        display: flex;
-        padding: 10px 0px;
-        width: 150px;
-        align-items: flex-start;
-        gap: 10px;
-    }
+	#logo {
+		display: flex;
+		padding: 10px 0px;
+		width: 150px;
+		align-items: flex-start;
+		gap: 10px;
+	}
 
-    #menu {
-        display: flex;
-        gap: 40px;
-    }
+	#menu {
+		display: flex;
+		gap: 40px;
+	}
 
-    @media only screen and (max-width: 1023px) {
-        #menu {
-            display: none;
-        }
+	@media only screen and (max-width: 1279px) {
+		nav {
+			padding: 15px;
+			gap: 30px;
+		}
+	}
 
-        nav {
-            margin-top: 25px;
-        }
-    }
+	@media only screen and (max-width: 1023px) {
+		#menu {
+			display: none;
+		}
 
-    @media only screen and (max-width: 1279px) {
-        nav {
-            padding: 15px;
-            gap: 30px;
-        }
-    }
+		nav {
+			margin-top: 25px;
+		}
+	}
 </style>
