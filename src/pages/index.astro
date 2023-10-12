@@ -1,4 +1,5 @@
 ---
+import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import PlusIcon from '../components/PlusIcon.astro';
 import Layout from '../layouts/Layout.astro';
@@ -45,6 +46,15 @@ import { Icon } from 'astro-icon';
 		<Link href="/" variant='secondary' textColor="background" iconColor='color-4'>
 			Link
 		</Link>
+		<Link href="/" variant='no-icon' textColor="primary" iconColor='color-4'>
+			Link
+		</Link>
+	</div>
+	<div>
+		<Button>Label</Button>
+		<Button variant='secondary'>Label</Button>
+		<Button variant='tertiary'>Label</Button>
+		<Icon name="analytics" />
 	</div>
 		<div>
 		<Icon name="logo" style="max-width: 500px" />

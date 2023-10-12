@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon"
 
 interface Props {
-    variant: "primary" | "secondary"
+    variant: "primary" | "secondary" | "no-icon"
     href: string
     textColor: "primary" | "secondary" | "background"
     iconColor: "color-1" | "color-2" | "color-3" | "color-4" | "color-5" | "color-6"
@@ -23,7 +23,7 @@ const { variant, textColor, iconColor, href } = Astro.props
         <span>
             <slot />    
         </span>
-        <Icon name="mi:arrow-right-up" class='icon-2' />
+        {variant !== "no-icon" && <Icon name="mi:arrow-right-up" class='icon-2' />}
     </a>
 )}
 
