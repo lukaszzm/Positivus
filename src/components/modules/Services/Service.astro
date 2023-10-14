@@ -1,0 +1,93 @@
+---
+import Card from '../../elements/Card.astro';
+import Heading from '../../elements/Heading.astro';
+import { Icon } from 'astro-icon';
+import Link from '../../elements/Link.astro';
+
+interface Props {
+	title: string;
+	icon: string;
+	href: string;
+	headingVariant: 'primary' | 'secondary';
+	bgColor: 'primary' | 'secondary' | 'background';
+}
+
+const { title, icon, href, headingVariant, bgColor } = Astro.props;
+---
+
+<Card bgColor={bgColor} class="service">
+	<div class="service__header">
+		<Heading as="h3" variant={headingVariant}>{title}</Heading>
+	</div>
+	<div class="service__link">
+		{
+			bgColor === 'secondary' ? (
+				<Link href={href} variant="primary" textColor="background" iconColor="color-5">
+					<span class="service__link__label">Learn more</span>
+				</Link>
+			) : (
+				<Link href={href} variant="primary" textColor="secondary" iconColor="color-4">
+					<span class="service__link__label">Learn more</span>
+				</Link>
+			)
+		}
+	</div>
+	<Icon name={icon} class="service__image" />
+</Card>
+
+<style>
+	.service {
+		display: grid;
+		gap: 30px;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			'header header header header .'
+			'link . image image image';
+	}
+
+	.service__header {
+		grid-area: header;
+	}
+
+	.service__link {
+		grid-area: link;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+	}
+
+	.service__image {
+		grid-area: image;
+	}
+
+	.service__link__label {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.service {
+			grid-template-columns: 1fr auto minmax(100px, 250px);
+			grid-template-rows: 2fr 1fr;
+			grid-template-areas:
+				'header . image'
+				'link . image';
+		}
+
+		.service__link {
+			display: flex;
+			margin-top: 40px;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.service__link__label {
+			display: block;
+		}
+
+		.service__image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+</style>

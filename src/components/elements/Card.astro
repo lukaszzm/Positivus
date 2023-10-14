@@ -1,93 +1,35 @@
 ---
-import Heading from './Heading.astro';
-import { Icon } from 'astro-icon';
-import Link from './Link.astro';
-
 interface Props {
-	title: string;
-	icon: string;
-	href: string;
 	bgColor: 'primary' | 'secondary' | 'background';
-	headingVariant: 'primary' | 'secondary';
+	class?: string;
 }
 
-const { title, icon, href, bgColor, headingVariant } = Astro.props;
+const { bgColor, class: className, ...rest } = Astro.props;
 ---
 
-<div class={`card card-${bgColor}`}>
-	<div class="info">
-		<Heading as="h3" variant={headingVariant}>{title}</Heading>
-		{
-			bgColor === 'secondary' ? (
-				<Link href={href} variant="primary" textColor="background" iconColor="color-5">
-					Learn more
-				</Link>
-			) : (
-				<Link href={href} variant="primary" textColor="secondary" iconColor="color-4">
-					Learn more
-				</Link>
-			)
-		}
-	</div>
-	<div class="image">
-		<Icon name={icon} />
-	</div>
+<div class:list={['card', `card-${bgColor}`, className]} {...rest}>
+	<slot />
 </div>
 
 <style>
 	.card {
-		display: flex;
-		gap: 40px;
 		width: 100%;
-		max-width: 600px;
-		padding: 50px;
-		justify-content: space-between;
-		align-items: center;
 		background-color: var(--muted);
-		border: 1px solid;
+		border: 1px solid var(--secondary);
 		border-radius: 45px;
+		padding: 50px;
+		box-shadow: 0px 5px 0px 0px var(--secondary);
 	}
 
 	.card-primary {
 		background-color: var(--primary);
-		border-color: var(--secondary);
 	}
 
 	.card-secondary {
 		background-color: var(--secondary);
-		border-color: var(--primary);
 	}
 
 	.card-background {
 		background-color: var(--muted);
-		border-color: var(--secondary);
-	}
-
-	.card div {
-		width: 100%;
-		height: 100%;
-	}
-
-	.info {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		gap: 10px;
-	}
-
-	@media only screen and (max-width: 1023px) {
-		#menu {
-			display: none;
-		}
-
-		nav {
-			margin-top: 25px;
-		}
-	}
-
-	@media only screen and (max-width: 1279px) {
-		.card {
-			gap: 15px;
-		}
 	}
 </style>

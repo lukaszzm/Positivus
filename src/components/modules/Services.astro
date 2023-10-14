@@ -2,6 +2,7 @@
 import Card from '../elements/Card.astro';
 import SectionLabel from '../elements/SectionLabel.astro';
 import Proposal from './Proposal.astro';
+import Service from './Services/Service.astro';
 ---
 
 <section id="services">
@@ -10,35 +11,28 @@ import Proposal from './Proposal.astro';
 		description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
 	/>
 
-	<div class="cards-container">
-		<div class="cards-row">
-			<Card title="Search Engine Optimization" icon="webSearch" href="" bgColor="background" headingVariant="primary" />
-			<Card title="Pay-per-click Advertising" icon="advertising" href="" bgColor="primary" headingVariant="secondary" />
-		</div>
-		<div class="cards-row">
-			<Card title="Social Media Marketing" icon="socialMedia" href="" bgColor="secondary" headingVariant="secondary" />
-			<Card title="Email Marketing" icon="email" href="" bgColor="background" headingVariant="primary" />
-		</div>
-		<div class="cards-row">
-			<Card title="Content Creation" icon="contentCreator" href="" bgColor="primary" headingVariant="secondary" />
-			<Card title="Analytics and Tracking" icon="analytics" href="" bgColor="secondary" headingVariant="primary" />
-		</div>
+	<div class="services__container">
+		<Service title="Search Engine Optimization" icon="webSearch" href="" bgColor="background" headingVariant="primary" />
+		<Service title="Pay-per-click Advertising" icon="advertising" href="" bgColor="primary" headingVariant="secondary" />
+		<Service title="Social Media Marketing" icon="socialMedia" href="" bgColor="secondary" headingVariant="secondary" />
+		<Service title="Email Marketing" icon="email" href="" bgColor="background" headingVariant="primary" />
+		<Service title="Content Creation" icon="contentCreator" href="" bgColor="primary" headingVariant="secondary" />
+		<Service title="Analytics and Tracking" icon="analytics" href="" bgColor="secondary" headingVariant="primary" />
 	</div>
 
 	<Proposal />
 </section>
 
 <style>
-	.cards-container {
-		display: flex;
-		flex-direction: column;
+	.services__container {
+		display: grid;
 		width: 100%;
-		gap: 50px;
+		gap: 30px;
 	}
 
-	.cards-row {
-		display: flex;
-		width: 100%;
-		gap: 50px;
+	@media (min-width: 768px) {
+		.services__container {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 </style>

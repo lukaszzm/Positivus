@@ -1,14 +1,11 @@
 ---
 import { Icon } from 'astro-icon';
+
+const companies = ['amazon-logo', 'dribble-logo', 'hubspot-logo', 'notion-logo', 'netflix-logo', 'zoom-logo'];
 ---
 
 <section id="logotypes">
-	<Icon name="amazon-logo" />
-	<Icon name="dribble-logo" />
-	<Icon name="hubspot-logo" />
-	<Icon name="notion-logo" />
-	<Icon name="netflix-logo" />
-	<Icon name="zoom-logo" />
+	{companies.map((el) => <Icon name={el} />)}
 </section>
 
 <style>
