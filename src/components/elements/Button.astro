@@ -1,48 +1,49 @@
 ---
 interface Props {
-    variant?: 'primary' | 'secondary' | 'tertiary'
+	variant?: 'primary' | 'secondary' | 'tertiary';
+	class?: string;
 }
 
-const { variant = "primary" } = Astro.props
+const { variant = 'primary' } = Astro.props;
 ---
 
 <button class={variant}>
-    <slot />
+	<slot />
 </button>
 
 <style>
-    button {
-        display: inline-flex;
-        padding: 20px 35px;
-        align-items: flex-start;
-        gap: 10px;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px;
-        border-radius: 14px;
-        border: 1px solid;
-        cursor: pointer;
-        transition-duration: .15s;
-    }
+	button {
+		display: inline-flex;
+		padding: 20px 35px;
+		align-items: flex-start;
+		gap: 10px;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 28px;
+		border-radius: 14px;
+		border: 1px solid;
+		cursor: pointer;
+		transition-duration: 0.15s;
+	}
 
-    button:hover {
-        transform: scale(1.05);
-    }
+	button:hover {
+		transform: scale(1.05);
+	}
 
-    .primary {
-        background-color: var(--secondary);
-        border-color: var(--secondary);
-        color: var(--background);
-    }
+	.primary {
+		background-color: var(--secondary);
+		border-color: var(--secondary);
+		color: var(--background);
+	}
 
-    .secondary {
-        background-color: transparent;
-        border-color: var(--secondary);
-    }
+	.secondary {
+		background-color: transparent;
+		border-color: var(--secondary);
+	}
 
-    .tertiary {
-        background-color: var(--primary);
-        border-color: var(--primary);
-    }
+	.tertiary {
+		background-color: var(--primary);
+		border-color: var(--primary);
+	}
 </style>
