@@ -3,6 +3,29 @@ import { Icon } from 'astro-icon';
 import Link from '../elements/Link.astro';
 import Button from '../elements/Button.astro';
 import HamburgerMenu from '../elements/HamburgerMenu.astro';
+
+const links: Array<{ label: string; href: string }> = [
+	{
+		label: 'About us',
+		href: '#about',
+	},
+	{
+		label: 'Services',
+		href: '#services',
+	},
+	{
+		label: 'Use cases',
+		href: '#use-cases',
+	},
+	{
+		label: 'Pricing',
+		href: '#pricing',
+	},
+	{
+		label: 'Blog',
+		href: '#blog',
+	},
+];
 ---
 
 <nav>
@@ -10,12 +33,14 @@ import HamburgerMenu from '../elements/HamburgerMenu.astro';
 		<Icon name="logo" />
 	</a>
 
-	<div id="menu">
-		<Link href="#about" variant="no-icon" textColor="secondary" iconColor="color-1">About us</Link>
-		<Link href="#services" variant="no-icon" textColor="secondary" iconColor="color-1">Services</Link>
-		<Link href="#use-cases" variant="no-icon" textColor="secondary" iconColor="color-1">Use cases</Link>
-		<Link href="#pricing" variant="no-icon" textColor="secondary" iconColor="color-1">Pricing</Link>
-		<Link href="#blog" variant="no-icon" textColor="secondary" iconColor="color-1">Blog</Link>
+	<div id="desktop-menu">
+		{
+			links.map(({ label, href }) => (
+				<Link href={href} variant="no-icon" textColor="secondary" iconColor="color-1">
+					{label}
+				</Link>
+			))
+		}
 		<Button variant="secondary">Request a quote</Button>
 	</div>
 
@@ -26,40 +51,37 @@ import HamburgerMenu from '../elements/HamburgerMenu.astro';
 	nav {
 		width: full;
 		max-width: 1440px;
-		margin-top: 60px;
-		padding: 0px 100px;
+		margin-top: 30px;
 		display: flex;
+		padding: 0 20px;
 		justify-content: space-between;
 		align-items: center;
 	}
 
 	#logo {
-		display: flex;
-		padding: 10px 0px;
 		width: 150px;
-		align-items: flex-start;
-		gap: 10px;
 	}
 
-	#menu {
-		display: flex;
-		gap: 40px;
+	#desktop-menu {
+		display: none;
 	}
 
-	@media only screen and (max-width: 1279px) {
-		nav {
-			padding: 15px;
-			gap: 30px;
-		}
-	}
-
-	@media only screen and (max-width: 1023px) {
-		#menu {
-			display: none;
+	@media (min-width: 1024px) {
+		#desktop-menu {
+			display: flex;
+			gap: 40px;
 		}
 
 		nav {
-			margin-top: 25px;
+			margin-top: 45px;
+			padding: 0 20px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		nav {
+			margin-top: 60px;
+			padding: 0 100px;
 		}
 	}
 </style>
