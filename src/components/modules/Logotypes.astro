@@ -1,34 +1,48 @@
 ---
-import { Icon } from "astro-icon"
+import { Icon } from 'astro-icon';
 ---
 
-<div id="logotypes">
-    <Icon name="amazon-logo" />
-    <Icon name="dribble-logo" />
-    <Icon name="hubspot-logo" />
-    <Icon name="notion-logo" />
-    <Icon name="netflix-logo" />
-    <Icon name="zoom-logo" />
-</div>
+<section id="logotypes">
+	<Icon name="amazon-logo" />
+	<Icon name="dribble-logo" />
+	<Icon name="hubspot-logo" />
+	<Icon name="notion-logo" />
+	<Icon name="netflix-logo" />
+	<Icon name="zoom-logo" />
+</section>
 
 <style>
-    #logotypes {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 100px;
-        gap: 100px;
-    }
+	#logotypes {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    @media only screen and (max-width: 1279px) {
-        #logotypes {
-            gap: 50px;
-        }
-    }
+	#logotypes svg {
+		flex: 1 0 20%;
+		margin: 20px;
+	}
 
-    @media only screen and (max-width: 1023px) {
-        #logotypes {
-            display: none;
-        }
-    }
+	@media (min-width: 768px) {
+		#logotypes svg {
+			margin: 25px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#logotypes {
+			flex-wrap: nowrap;
+			gap: 30px;
+		}
+
+		#logotypes svg {
+			flex: auto;
+			margin: 0;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		#logotypes {
+			gap: 75px;
+		}
+	}
 </style>
