@@ -1,36 +1,45 @@
 ---
-import { Icon } from "astro-icon"
+import { Icon } from 'astro-icon';
+import type Accordion from './Accordion.astro';
+import type Button from './Button.astro';
 
 interface Props {
-    isActive: boolean;
+	isActive: boolean;
+	class?: string;
 }
 
-const { isActive } = Astro.props 
+const { isActive, class: className, ...rest } = Astro.props;
 ---
 
 <button>
-    {isActive ? <Icon name="fa-solid:plus" class="icon" /> : <Icon name="fa-solid:minus" class="icon" />}
+	{
+		isActive ? (
+			<Icon name="fa-solid:plus" class:list={['icon', className]} {...rest} />
+		) : (
+			<Icon name="fa-solid:minus" class:list={['icon', className]} {...rest} />
+		)
+	}
 </button>
 
 <style>
-    button {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 1px solid var(--secondary);
-        background-color: var(--background);
-        transition-duration: .2s;
-    }
+	button {
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		border-radius: 50%;
+		border: 1px solid var(--secondary);
+		background-color: var(--background);
+		transition-duration: 0.2s;
+	}
 
-    button:hover {
-        background-color: var(--primary);
-    }
+	button:hover {
+		background-color: var(--primary);
+	}
 
-    .icon {
-        padding: 5px;
-    }
+	.icon {
+		padding: 5px;
+	}
 </style>
