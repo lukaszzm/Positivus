@@ -8,5 +8,17 @@ import DesktopCases from './CaseStudies/Cases.astro';
 	<SectionLabel title="Case Studies" description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies" />
 	<DesktopCases />
 
-	<Accordion />
+	<div class="test">
+		<Accordion isOpen={false} />
+		<Accordion isOpen={true} />
+	</div>
 </section>
+
+<style>
+	.test {
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+</style>
