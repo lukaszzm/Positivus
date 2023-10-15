@@ -1,0 +1,63 @@
+---
+import Card from '../../elements/Card.astro';
+import Link from '../../elements/Link.astro';
+---
+
+<Card bgColor="secondary" class="cases">
+	<div>
+		<p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
+		<Link href="" variant="secondary" textColor="primary" iconColor="color-1">Learn more</Link>
+	</div>
+	<div>
+		<p>
+			For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.
+		</p>
+		<Link href="" variant="secondary" textColor="primary" iconColor="color-1">Learn more</Link>
+	</div>
+	<div>
+		<p>
+			For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.
+		</p>
+		<Link href="" variant="secondary" textColor="primary" iconColor="color-1">Learn more</Link>
+	</div>
+</Card>
+
+<style>
+	.cases {
+		display: none;
+		color: var(--background);
+	}
+
+	.cases > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1 1 20em;
+		padding: 10px 20px;
+		border-right: 1px solid var(--background);
+		border-left: 1px solid var(--background);
+		gap: 20px;
+	}
+
+	.cases > div:first-child {
+		padding-left: 0;
+		border: none;
+	}
+
+	.cases > div:last-child {
+		padding-right: 0;
+		border: none;
+	}
+
+	@media (min-width: 1024px) {
+		.cases {
+			display: flex;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.cases > div {
+			padding: 20px 40px;
+		}
+	}
+</style>
