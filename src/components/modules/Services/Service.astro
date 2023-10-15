@@ -65,7 +65,55 @@ const { title, icon, href, headingVariant, bgColor } = Astro.props;
 		display: none;
 	}
 
+	@media (min-width: 768px) {
+		.service {
+			grid-template-columns: 1fr auto minmax(100px, 250px);
+			grid-template-rows: 2fr 1fr;
+			grid-template-areas:
+				'header . image'
+				'link . image';
+		}
+
+		.service__link {
+			display: flex;
+			margin-top: 40px;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.service__link__label {
+			display: block;
+		}
+
+		.service__image {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	@media (min-width: 1024px) {
+		.service {
+			display: grid;
+			gap: 30px;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				'header header header header .'
+				'link . image image image';
+		}
+
+		.service__link__label {
+			display: none;
+		}
+
+		.service__link {
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+		}
+	}
+
+	@media (min-width: 1280px) {
 		.service {
 			grid-template-columns: 1fr auto minmax(100px, 250px);
 			grid-template-rows: 2fr 1fr;
