@@ -1,0 +1,96 @@
+---
+import Card from '../../elements/Card.astro';
+import Link from '../../elements/Link.astro';
+
+const useCases: Array<{ description: string; href: string }> = [
+	{
+		description:
+			'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
+		href: '/',
+	},
+	{
+		description:
+			'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
+		href: '/',
+	},
+	{
+		description:
+			'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
+		href: '/',
+	},
+];
+---
+
+<Card bgColor="secondary" class="case__wrapper">
+	{
+		useCases.map(({ description, href }) => (
+			<Card bgColor="secondary" class="case__item">
+				<p>{description}</p>
+				<Link href={href} variant="secondary" textColor="primary" iconColor="color-1">
+					Learn more
+				</Link>
+			</Card>
+		))
+	}
+</Card>
+
+<style>
+	.case__wrapper {
+		display: flex;
+		flex-direction: column;
+		color: var(--background);
+	}
+
+	.case__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		padding-top: 40px;
+		border-top: 1px solid var(--background);
+		border-bottom: 1px solid var(--background);
+		gap: 20px;
+		border-radius: 0;
+	}
+
+	.case__item:first-child {
+		padding-left: 0;
+		border: none;
+	}
+
+	.case__item:last-child {
+		padding-right: 0;
+		border: none;
+	}
+
+	@media (min-width: 1024px) {
+		.case__wrapper {
+			flex-direction: row;
+		}
+
+		.case__item {
+			padding: 10px 20px;
+			border-right: 1px solid var(--background);
+			border-left: 1px solid var(--background);
+			border-top: none;
+			border-bottom: none;
+			gap: 20px;
+		}
+
+		.case__item:first-child {
+			padding-left: 0;
+			border: none;
+		}
+
+		.case__item:last-child {
+			padding-right: 0;
+			border: none;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.case__item {
+			padding: 20px 40px;
+		}
+	}
+</style>
