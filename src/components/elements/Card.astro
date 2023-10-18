@@ -1,6 +1,6 @@
 ---
 interface Props {
-	bgColor: 'primary' | 'secondary' | 'background';
+	bgColor: 'primary' | 'secondary' | 'background' | 'muted';
 	class?: string;
 }
 
@@ -30,6 +30,10 @@ const { bgColor, class: className, ...rest } = Astro.props;
 	}
 
 	.card-background {
+		background-color: var(--background);
+	}
+
+	.card-muted {
 		background-color: var(--muted);
 	}
 </style>

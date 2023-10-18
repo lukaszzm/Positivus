@@ -10,7 +10,7 @@ interface Props {
 const { number, title, description } = Astro.props
 ---
 
-<Card bgColor="primary" class="accordion" data-state="closed">
+<Card bgColor="muted" class="accordion" data-state="closed">
 	<h3 data-state="closed" data-orientation="vertical">
 		<button class="accordion__control">
 			<div class="accordion__label">
@@ -30,10 +30,6 @@ const { number, title, description } = Astro.props
 		width: 100%;
 		padding: 30px;
 		transition: all 0.2s ease-out;
-	}
-
-	.accordion[data-state='closed'] {
-		background-color: var(--muted);
 	}
 
 	.accordion[data-state='open'] {

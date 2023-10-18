@@ -1,0 +1,93 @@
+---
+import Button from '../elements/Button.astro';
+import SectionLabel from '../elements/SectionLabel.astro';
+import TeamMember from '../modules/Team/TeamMember.astro';
+
+import FirstTeamMemberImage from '../../assets/team-1.png';
+import SecondTeamMemberImage from '../../assets/team-2.png';
+import ThirdTeamMemberImage from '../../assets/team-3.png';
+import FourthTeamMemberImage from '../../assets/team-4.png';
+import FifthTeamMemberImage from '../../assets/team-5.png';
+import SixthTeamMemberImage from '../../assets/team-6.png';
+
+const teamMembers: Array<{ src: ImageMetadata; name: string; position: string; description: string }> = [
+	{
+		src: FirstTeamMemberImage,
+		name: 'John Smith',
+		position: 'CEO and Founder',
+		description: '10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy',
+	},
+	{
+		src: SecondTeamMemberImage,
+		name: 'Jane Doe',
+		position: 'Director of Operations',
+		description: '7+ years of experience in project management and team leadership. Strong organizational and communication skills',
+	},
+	{
+		src: ThirdTeamMemberImage,
+		name: 'Michael Brown',
+		position: 'Senior SEO Specialist',
+		description: '5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization',
+	},
+	{
+		src: FourthTeamMemberImage,
+		name: 'Emily Johnson',
+		position: 'PPC Manager',
+		description: '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
+	},
+	{
+		src: FifthTeamMemberImage,
+		name: 'Brian Williams',
+		position: 'Social Media Specialist',
+		description: '4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement',
+	},
+	{
+		src: SixthTeamMemberImage,
+		name: 'Sarah Kim',
+		position: 'Content Creator',
+		description: '2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries',
+	},
+];
+---
+
+<section id="team">
+	<SectionLabel title="Team" description="Meet the skilled and experienced team behind our successful digital marketing strategies" />
+
+	<div class="team__container">
+		{teamMembers.map((el) => <TeamMember {...el} />)}
+	</div>
+
+	<Button class="team__button">See all team</Button>
+</section>
+
+<style>
+	.team__container {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 30px;
+	}
+
+	.team__button {
+		margin-top: 30px;
+		width: 100%;
+		justify-content: center;
+	}
+
+	@media (min-width: 1024px) {
+		.team__container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+		}
+
+		.team__button {
+			margin-top: 40px;
+			width: auto;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.team__container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

@@ -1,0 +1,76 @@
+---
+import Card from '../../elements/Card.astro';
+import Icon from 'astro-icon';
+import { Image } from 'astro:assets';
+import Image1 from '../../../assets/team-1.png';
+
+interface Props {
+	src: ImageMetadata;
+	name: string;
+	position: string;
+	description: string;
+}
+
+const { src, name, position, description } = Astro.props;
+---
+
+<Card bgColor="background" class="team-member">
+	<div class="team-member__overview">
+		<Image src={src} width="105" height="105" alt="Image of John Smith" class="team-member__overview__image" />
+		<div class="team-member__overview__label">
+			<h4>{name}</h4>
+			<p>{position}</p>
+		</div>
+
+		<a href="https://www.linkedin.com/" class="team-member__overview__link">
+			<Icon name="brandico:linkedin" />
+		</a>
+	</div>
+
+	<div class="team-member__description">
+		<p>{description}</p>
+	</div>
+</Card>
+
+<style>
+	.team-member {
+		padding: 40px 35px;
+	}
+
+	.team-member__description {
+		margin-top: 28px;
+		padding-top: 28px;
+		border-top: 1px solid var(--secondary);
+	}
+
+	.team-member__overview {
+		display: flex;
+		position: relative;
+		padding-right: 35px;
+		gap: 20px;
+	}
+
+	.team-member__overview__image {
+		border-radius: 25px;
+		border: 1px solid var(--secondary);
+		box-shadow: 3px 3px 0px 0px var(--secondary);
+	}
+
+	.team-member__overview__link {
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		padding: 8px;
+		top: 0;
+		right: 0;
+		border-radius: 50%;
+		color: var(--primary);
+		background-color: var(--secondary);
+	}
+
+	.team-member__overview__label {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+</style>
