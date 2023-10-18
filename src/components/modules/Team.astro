@@ -57,7 +57,9 @@ const teamMembers: Array<{ src: ImageMetadata; name: string; position: string; d
 		{teamMembers.map((el) => <TeamMember {...el} />)}
 	</div>
 
-	<Button class="team__button">See all team</Button>
+	<a href="/team">
+		<Button class="team__button">See all team</Button>
+	</a>
 </section>
 
 <style>
