@@ -1,6 +1,6 @@
 ---
-import Accordion from '../elements/Accordion.astro';
 import SectionLabel from '../elements/SectionLabel.astro';
+import { Accordion } from '../react-components/Accordion';
 
 const steps: Array<{ number: string; title: string; description: string }> = [
 	{
@@ -46,7 +46,7 @@ const steps: Array<{ number: string; title: string; description: string }> = [
 	<SectionLabel title="Our Working Process" description="Step-by-Step Guide to Achieving Your Business Goals" />
 
 	<div class="working-process__steps-container">
-		{steps.map((el) => <Accordion {...el} />)}
+		{steps.map((el) => <Accordion client:visible {...el} />)}
 	</div>
 </section>
 

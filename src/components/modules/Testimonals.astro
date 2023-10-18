@@ -1,0 +1,23 @@
+---
+import SectionLabel from '../elements/SectionLabel.astro';
+
+---
+
+<section id="testimonals">
+	<SectionLabel title="Testimonals" description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services" />
+
+	<div class="testimonals__container card card-secondary"><div>Lorem Ipsum</div></div>
+</section>
+
+<style>
+	.testimonals__container {
+		color: white;
+		padding: 30px 60px;
+	}
+
+	@media (min-width: 1024px) {
+		.testimonals__container {
+			padding: 84px 0 60px 0;
+		}
+	}
+</style>

@@ -1,5 +1,4 @@
 ---
-import Card from '../../elements/Card.astro';
 import Heading from '../../elements/Heading.astro';
 import { Icon } from 'astro-icon';
 import Link from '../../elements/Link.astro';
@@ -15,7 +14,7 @@ interface Props {
 const { title, icon, href, headingVariant, bgColor } = Astro.props;
 ---
 
-<Card bgColor={bgColor} class="service">
+<div class:list={["service", "card", `card-${bgColor}`]}>
 	<div class="service__header">
 		<Heading as="h3" variant={headingVariant}>{title}</Heading>
 	</div>
@@ -33,7 +32,7 @@ const { title, icon, href, headingVariant, bgColor } = Astro.props;
 		}
 	</div>
 	<Icon name={icon} class="service__image" />
-</Card>
+</div>
 
 <style>
 	.service {

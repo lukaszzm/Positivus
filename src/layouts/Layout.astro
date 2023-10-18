@@ -82,6 +82,31 @@ const { title } = Astro.props;
 		margin: 0;
 	}
 
+	.card {
+		width: 100%;
+		background-color: var(--muted);
+		border: 1px solid var(--secondary);
+		border-radius: 45px;
+		padding: 50px;
+		box-shadow: 0px 5px 0px 0px var(--secondary);
+	}
+
+	.card-primary {
+		background-color: var(--primary);
+	}
+
+	.card-secondary {
+		background-color: var(--secondary);
+	}
+
+	.card-background {
+		background-color: var(--background);
+	}
+
+	.card-muted {
+		background-color: var(--muted);
+	}
+
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 3.75rem;

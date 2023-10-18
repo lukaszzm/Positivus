@@ -1,5 +1,4 @@
 ---
-import Card from '../../elements/Card.astro';
 import Link from '../../elements/Link.astro';
 
 const useCases: Array<{ description: string; href: string }> = [
@@ -21,18 +20,18 @@ const useCases: Array<{ description: string; href: string }> = [
 ];
 ---
 
-<Card bgColor="secondary" class="case__wrapper">
+<div class="case__wrapper card card-secondary">
 	{
 		useCases.map(({ description, href }) => (
-			<Card bgColor="secondary" class="case__item">
+			<div class="case__item card card-secondary">
 				<p>{description}</p>
 				<Link href={href} variant="secondary" textColor="primary" iconColor="color-1">
 					Learn more
 				</Link>
-			</Card>
+			</div>
 		))
 	}
-</Card>
+</div>
 
 <style>
 	.case__wrapper {
@@ -54,12 +53,10 @@ const useCases: Array<{ description: string; href: string }> = [
 	}
 
 	.case__item:first-child {
-		padding-left: 0;
 		border: none;
 	}
 
 	.case__item:last-child {
-		padding-right: 0;
 		border: none;
 	}
 
