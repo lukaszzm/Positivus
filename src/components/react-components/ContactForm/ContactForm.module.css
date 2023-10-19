@@ -1,0 +1,11 @@
+.form {
+	width: 100%;
+	max-width: 560px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.form button {
+	justify-content: center;
+}

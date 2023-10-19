@@ -1,0 +1,10 @@
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.error-message {
+	color: var(--error);
+	font-size: 0.875rem;
+}

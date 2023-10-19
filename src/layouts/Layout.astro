@@ -30,6 +30,7 @@ const { title } = Astro.props;
 		--secondary: #191a23;
 		--muted: #f3f3f3;
 		--background: #fff;
+		--error: #e33d3d;
 		--font-family: 'Space Grotesk Variable';
 	}
 
@@ -82,6 +83,27 @@ const { title } = Astro.props;
 		margin: 0;
 	}
 
+	input,
+	textarea {
+		padding: 18px 30px;
+		border-radius: 15px;
+		font-family: var(--font-family);
+		font-size: 1.125rem;
+		border: 1px solid var(--secondary);
+		resize: none;
+	}
+
+	label {
+		font-weight: 600;
+		margin-bottom: 5px;
+	}
+
+	input:focus,
+	textarea:focus {
+		border-color: var(--primary);
+		outline: 2px solid var(--primary);
+	}
+
 	.card {
 		width: 100%;
 		background-color: var(--muted);
@@ -105,6 +127,41 @@ const { title } = Astro.props;
 
 	.card-muted {
 		background-color: var(--muted);
+	}
+
+	.button {
+		display: inline-flex;
+		padding: 20px 35px;
+		align-items: flex-start;
+		gap: 10px;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 28px;
+		border-radius: 14px;
+		border: 1px solid;
+		cursor: pointer;
+		transition-duration: 0.15s;
+	}
+
+	.button:hover {
+		transform: scale(1.05);
+	}
+
+	.button-primary {
+		background-color: var(--secondary);
+		border-color: var(--secondary);
+		color: var(--background);
+	}
+
+	.button-secondary {
+		background-color: transparent;
+		border-color: var(--secondary);
+	}
+
+	.button-tertiary {
+		background-color: var(--primary);
+		border-color: var(--primary);
 	}
 
 	@media (min-width: 768px) {

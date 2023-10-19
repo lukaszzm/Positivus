@@ -1,0 +1,31 @@
+---
+import SectionLabel from '../elements/SectionLabel.astro';
+import { ContactForm } from '../react-components/ContactForm';
+---
+
+<section id="contact">
+	<SectionLabel title="Contact Us" description="Connect with Us: Let's Discuss Your Digital Marketing Needs" />
+
+	<div class="card card-muted contact__form-wrapper">
+		<ContactForm client:load />
+		<!-- <Icon name="contact" class="contact__form-wrapper__icon" /> -->
+	</div>
+</section>
+
+<style>
+	.contact__form-wrapper {
+		border: none;
+		box-shadow: none;
+		position: relative;
+		padding-right: 400px;
+	}
+
+	.contact__form-wrapper__icon {
+		position: absolute;
+		height: 400px;
+		width: 400px;
+		right: 0;
+		padding: 0;
+		margin: 0;
+	}
+</style>
