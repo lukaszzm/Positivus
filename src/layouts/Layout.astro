@@ -31,6 +31,7 @@ const { title } = Astro.props;
 		--muted: #f3f3f3;
 		--background: #fff;
 		--error: #e33d3d;
+		--success: #b9ffb6;
 		--font-family: 'Space Grotesk Variable';
 	}
 
@@ -129,7 +130,7 @@ const { title } = Astro.props;
 		background-color: var(--muted);
 	}
 
-	.button {
+	button {
 		display: inline-flex;
 		padding: 20px 35px;
 		align-items: flex-start;
@@ -144,8 +145,14 @@ const { title } = Astro.props;
 		transition-duration: 0.15s;
 	}
 
-	.button:hover {
+	button:hover {
 		transform: scale(1.05);
+	}
+
+	button:disabled {
+		opacity: 0.5;
+		transform: none;
+		cursor: default;
 	}
 
 	.button-primary {

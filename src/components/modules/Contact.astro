@@ -1,6 +1,7 @@
 ---
 import SectionLabel from '../elements/SectionLabel.astro';
 import { ContactForm } from '../react-components/ContactForm';
+import { Icon } from 'astro-icon';
 ---
 
 <section id="contact">
@@ -8,7 +9,7 @@ import { ContactForm } from '../react-components/ContactForm';
 
 	<div class="card card-muted contact__form-wrapper">
 		<ContactForm client:load />
-		<!-- <Icon name="contact" class="contact__form-wrapper__icon" /> -->
+		<Icon name="contact" class="contact__form-wrapper__icon" />
 	</div>
 </section>
 
@@ -17,15 +18,23 @@ import { ContactForm } from '../react-components/ContactForm';
 		border: none;
 		box-shadow: none;
 		position: relative;
-		padding-right: 400px;
 	}
 
 	.contact__form-wrapper__icon {
-		position: absolute;
-		height: 400px;
-		width: 400px;
-		right: 0;
-		padding: 0;
-		margin: 0;
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.contact__form-wrapper {
+			padding-right: 350px;
+		}
+		.contact__form-wrapper__icon {
+			display: block;
+			position: absolute;
+			top: 100px;
+			right: -280px;
+			width: 600px;
+			overflow: hidden;
+		}
 	}
 </style>

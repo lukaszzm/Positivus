@@ -12,25 +12,6 @@ const { variant = 'primary', class: className, ...rest } = Astro.props;
 </button>
 
 <style>
-	.button {
-		display: inline-flex;
-		padding: 20px 35px;
-		align-items: flex-start;
-		gap: 10px;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 28px;
-		border-radius: 14px;
-		border: 1px solid;
-		cursor: pointer;
-		transition-duration: 0.15s;
-	}
-
-	.button:hover {
-		transform: scale(1.05);
-	}
-
 	.button-primary {
 		background-color: var(--secondary);
 		border-color: var(--secondary);

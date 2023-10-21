@@ -2,3 +2,7 @@
 	display: flex;
 	gap: 35px;
 }
+
+input[type='radio'] {
+	accent-color: var(--secondary);
+}

@@ -1,0 +1,10 @@
+.alert {
+	background-color: var(--success);
+	border-radius: 15px;
+	width: 100%;
+	padding: 20px;
+}
+
+.alert p {
+	font-size: 1rem;
+}
