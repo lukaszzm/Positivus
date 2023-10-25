@@ -1,6 +1,4 @@
 ---
-import Heading from './Heading.astro';
-
 interface Props {
 	title: string;
 	description: string;
@@ -10,9 +8,9 @@ const { title, description } = Astro.props;
 ---
 
 <div>
-	<Heading>
+	<h2 class="heading heading-primary">
 		{title}
-	</Heading>
+	</h2>
 	<p>
 		{description}
 	</p>

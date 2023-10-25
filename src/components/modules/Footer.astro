@@ -1,0 +1,139 @@
+---
+import { Icon } from 'astro-icon';
+import { NewsletterForm } from '../react-components/NewsletterForm';
+---
+
+<footer>
+	<div class="card card-secondary footer__card">
+		<Icon name="logoWhite" class="footer__logo" />
+		<div class="footer__links">
+			<a href="">About us</a>
+			<a href="">Services</a>
+			<a href="">Use Cases</a>
+			<a href="">Pricing</a>
+			<a href="">Blog</a>
+		</div>
+
+		<div class="footer__contact-info">
+			<h4 class="heading heading-primary">Contact us:</h4>
+			<p>Email: info@positivus.com</p>
+			<p>Phone: 555-567-8901</p>
+			<div class="footer__contact-info__address">
+				<p>Address: 1234 Main St</p>
+				<p>Moonstone City, Stardust State 12345</p>
+			</div>
+		</div>
+
+		<NewsletterForm client:load />
+
+		<div class="footer__socials">
+			<a href="https://www.linkedin.com/">
+				<Icon name="brandico:linkedin" />
+			</a>
+
+			<a href="https://www.facebook.com/">
+				<Icon name="brandico:facebook" />
+			</a>
+
+			<a href="https://www.twitter.com/">
+				<Icon name="brandico:twitter" />
+			</a>
+		</div>
+
+		<div class="footer__separator"></div>
+
+		<div class="footer__policy-privacy">
+			<p>© 2023 Positivus. All Rights Reserved.</p>
+			<a href="">Privacy Policy</a>
+		</div>
+	</div>
+</footer>
+
+<style>
+	footer {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		padding: 0;
+	}
+
+	.footer__card {
+		border-radius: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 37px;
+		color: var(--muted);
+	}
+
+	.footer__logo {
+		max-width: 140px;
+	}
+
+	.footer__links {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	a {
+		color: var(--background);
+		text-align: center;
+		text-decoration: none;
+		font-size: 1rem;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.footer__contact-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.footer__contact-info h4 {
+		margin-bottom: 12px;
+		color: var(--secondary);
+	}
+
+	.footer__contact-info__address {
+		text-align: center;
+	}
+
+	.footer__socials {
+		display: flex;
+		gap: 15px;
+	}
+
+	.footer__socials a {
+		width: 35px;
+		height: 35px;
+		padding: 8px;
+		top: 0;
+		right: 0;
+		border-radius: 50%;
+		color: var(--secondary);
+		background-color: var(--muted);
+	}
+
+	.footer__socials svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer__separator {
+		width: 100%;
+		border-bottom: 1px solid var(--muted);
+	}
+
+	.footer__policy-privacy {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+		text-align: center;
+	}
+</style>
