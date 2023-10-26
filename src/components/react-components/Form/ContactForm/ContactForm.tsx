@@ -1,11 +1,11 @@
 import styles from './ContactForm.module.css';
 import { useForm, type SubmitHandler, FormProvider } from 'react-hook-form';
-import { type Contact, contactSchema } from '../../../schemas/contactSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { VariantSelect } from './VariantSelect';
-import { FormField } from './FormField';
 import { useState } from 'react';
-import { SuccessAlert } from './SuccessAlert';
+import { contactSchema, type Contact } from '../../../../schemas/contactSchema';
+import { FormField } from '../FormField';
+import { SuccessAlert } from '../SuccessAlert';
 
 export const ContactForm = () => {
 	const form = useForm<Contact>({
@@ -38,8 +38,11 @@ export const ContactForm = () => {
 				<VariantSelect />
 				<FormField label="Name" name="name" />
 				<FormField label="Email" name="email" />
-				<FormField label="Message" name="message" as="textarea" />
-				{isSuccess && <SuccessAlert />}
+				<FormField label="Message" name="email" as="textarea" />
+
+				{isSuccess && (
+					<SuccessAlert text="Your message has been successfully delivered. Our team will contact you as soon as possible at the email address you provided." />
+				)}
 				<button disabled={isSubmitting} className="button button-primary" type="submit">
 					Send Message
 				</button>

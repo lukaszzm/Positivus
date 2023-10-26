@@ -1,9 +1,10 @@
-import { useForm, type SubmitHandler, Form } from 'react-hook-form';
+import { useForm, type SubmitHandler, Form, FormProvider } from 'react-hook-form';
 import styles from './NewsletterForm.module.css';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { newsletterSchema, type Newsletter } from '../../../schemas/newsletterSchema';
+import { newsletterSchema, type Newsletter } from '../../../../schemas/newsletterSchema';
 import { useState } from 'react';
-import { ErrorMessage } from '@hookform/error-message';
+import { SuccessAlert } from '../SuccessAlert';
+import { FormField } from '../FormField';
 
 export const NewsletterForm = () => {
 	const form = useForm<Newsletter>({
@@ -29,16 +30,17 @@ export const NewsletterForm = () => {
 
 	return (
 		<div className={`card ${styles['form-container']}`}>
-			<Form {...form}>
+			<FormProvider {...form}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<input type="email" placeholder="Email" />
-					<ErrorMessage name="email" errors={errors} />
+					<FormField label="Email" name="email" />
+
+					{isSuccess && <SuccessAlert text="You have successfully subscribed to our list." />}
 
 					<button disabled={isSubmitting} className="button-tertiary" type="submit">
 						Subscribe to news
 					</button>
 				</form>
-			</Form>
+			</FormProvider>
 		</div>
 	);
 };
