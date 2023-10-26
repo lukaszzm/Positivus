@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<div class="navigation-panel">
+	<Icon name="logoWhite" class="navigation-panel__logo" />
+	<div class="navigation-panel__links">
+		<a href="">About us</a>
+		<a href="">Services</a>
+		<a href="">Use Cases</a>
+		<a href="">Pricing</a>
+		<a href="">Blog</a>
+	</div>
+
+	<div class="navigation-panel__socials">
+		<a href="https://www.linkedin.com/">
+			<Icon name="brandico:linkedin" />
+		</a>
+
+		<a href="https://www.facebook.com/">
+			<Icon name="brandico:facebook" />
+		</a>
+
+		<a href="https://www.twitter.com/">
+			<Icon name="brandico:twitter" />
+		</a>
+	</div>
+</div>
+
+<style>
+	.navigation-panel {
+		display: flex;
+		flex-direction: column;
+		gap: 37px;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.navigation-panel__logo {
+		max-width: 140px;
+	}
+
+	.navigation-panel__links {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.navigation-panel__socials {
+		display: none;
+	}
+
+	.navigation-panel__socials a {
+		width: 35px;
+		height: 35px;
+		padding: 8px;
+		top: 0;
+		right: 0;
+		border-radius: 50%;
+		color: var(--secondary);
+		background-color: var(--muted);
+	}
+
+	.navigation-panel__socials svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	a {
+		color: var(--background);
+		text-align: center;
+		text-decoration: none;
+		font-size: 1rem;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	@media (min-width: 1024px) {
+		.navigation-panel {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.navigation-panel__links {
+			flex-direction: row;
+			gap: 30px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.navigation-panel__socials {
+			display: flex;
+			gap: 15px;
+		}
+	}
+</style>

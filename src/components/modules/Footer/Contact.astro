@@ -1,0 +1,60 @@
+---
+import { NewsletterForm } from '../../react-components/Form/NewsletterForm';
+---
+
+<div class="contact">
+	<div class="contact__info">
+		<h4 class="heading heading-primary">Contact us:</h4>
+		<p>Email: info@positivus.com</p>
+		<p>Phone: 555-567-8901</p>
+		<div class="contact__info__address">
+			<p>Address: 1234 Main St</p>
+			<p>Moonstone City, Stardust State 12345</p>
+		</div>
+	</div>
+
+	<NewsletterForm client:load />
+</div>
+
+<style>
+	.contact {
+		display: flex;
+		flex-direction: column;
+		gap: 37px;
+		width: 100%;
+	}
+
+	.contact__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.contact__info h4 {
+		margin-bottom: 12px;
+		color: var(--secondary);
+	}
+
+	.contact__info__address {
+		text-align: center;
+	}
+
+	@media (min-width: 1024px) {
+		.contact {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.contact__info {
+			width: 100%;
+			align-items: flex-start;
+			gap: 15px;
+		}
+
+		.contact__info__address {
+			text-align: left;
+		}
+	}
+</style>

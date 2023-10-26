@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<div class="socials">
+	<a href="https://www.linkedin.com/">
+		<Icon name="brandico:linkedin" />
+	</a>
+
+	<a href="https://www.facebook.com/">
+		<Icon name="brandico:facebook" />
+	</a>
+
+	<a href="https://www.twitter.com/">
+		<Icon name="brandico:twitter" />
+	</a>
+</div>
+
+<style>
+	.socials {
+		display: flex;
+		gap: 15px;
+	}
+
+	.socials a {
+		width: 35px;
+		height: 35px;
+		padding: 8px;
+		top: 0;
+		right: 0;
+		border-radius: 50%;
+		color: var(--secondary);
+		background-color: var(--muted);
+	}
+
+	.socials svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	@media (min-width: 1280px) {
+		.socials {
+			display: none;
+		}
+	}
+</style>
