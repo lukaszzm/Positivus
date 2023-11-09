@@ -1,11 +1,35 @@
 ---
 import SectionLabel from '../elements/SectionLabel.astro';
+import { Carousel } from '../react-components/Carousel';
+
+const testimonals = [
+	{
+		quote:
+			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
+		name: 'First',
+		role: 'Marketing Director at XYZ Corp',
+	},
+	{
+		quote:
+			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
+		name: 'Second',
+		role: 'Marketing Director at XYZ Corp',
+	},
+	{
+		quote:
+			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
+		name: 'Third',
+		role: 'Marketing Director at XYZ Corp',
+	},
+];
 ---
 
 <section id="testimonals">
 	<SectionLabel title="Testimonals" description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services" />
 
-	<div class="testimonals__container card card-secondary"></div>
+	<div class="testimonals__container card card-secondary">
+		<Carousel items={testimonals} client:load />
+	</div>
 </section>
 
 <style>

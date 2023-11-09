@@ -1,0 +1,20 @@
+.carousel-item {
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	gap: 45px;
+}
+
+.carousel-item__quote {
+	border: 1px solid var(--primary);
+	border-radius: 45px;
+	padding: 52px;
+}
+
+.carousel-item__by {
+	margin-left: 95px;
+}
+
+.carousel-item__by__name {
+	color: var(--primary);
+}
