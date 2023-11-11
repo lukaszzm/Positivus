@@ -24,7 +24,7 @@ export const CarouselControls = ({ active, length, setActive }: CarouselControls
 
 			<div className={styles.dots}>
 				{Array.from({ length }).map((_, index) => (
-					<button key={index} onClick={() => setActive(index)} className={styles.dot} aria-active={active === index} />
+					<button key={index} onClick={() => setActive(index)} className={`${styles.dot} ${index === active && styles.active}`} />
 				))}
 			</div>
 
