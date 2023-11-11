@@ -1,6 +1,8 @@
-import { useState } from 'react';
 import styles from './Carousel.module.css';
+
+import { useMemo, useState } from 'react';
 import { CarouselItem } from './CarouselItem';
+import { CarouselControls } from './CarouselControls';
 
 interface Testimonal {
 	name: string;
@@ -15,10 +17,9 @@ interface CarouselProps {
 export const Carousel = ({ items }: CarouselProps) => {
 	const [activeItem, setActiveItem] = useState(0);
 
-	const max = Math.floor(items.length / 2);
-	const min = -max;
+	const baseValue = useMemo(() => (items.length - 1) * 400, []);
 
-	const xValue = -(activeItem * 800);
+	const xValue = baseValue - activeItem * 800;
 	const translateX = `translateX(${xValue}px)`;
 
 	return (
@@ -28,15 +29,8 @@ export const Carousel = ({ items }: CarouselProps) => {
 					<CarouselItem key={index} {...item} />
 				))}
 			</div>
-			<div className={styles['carousel__controls']}>
-				<button className={styles['prev-arrow']} onClick={() => setActiveItem((active) => (active === min ? active : active - 1))}>
-					Prev
-				</button>
-				<p>{activeItem}</p>
-				<button className={styles['next-arrow']} onClick={() => setActiveItem((active) => (active === max ? active : active + 1))}>
-					Next
-				</button>
-			</div>
+
+			<CarouselControls active={activeItem} length={items.length} setActive={setActiveItem} />
 		</div>
 	);
 };

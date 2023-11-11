@@ -10,21 +10,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.3",
-    "@fontsource-variable/space-grotesk": "^5.0.13",
+    "@astrojs/react": "^3.0.4",
+    "@fontsource-variable/space-grotesk": "^5.0.15",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.2",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^3.2.4",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "astro": "^3.5.2",
     "astro-icon": "^0.8.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-hook-form": "^7.47.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "react-icons": "^4.11.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "prettier-plugin-astro": "^0.12.1"
   }
 }

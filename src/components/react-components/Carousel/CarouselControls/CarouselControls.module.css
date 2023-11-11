@@ -1,0 +1,32 @@
+.controls-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 25px;
+}
+
+.arrow {
+	background-color: transparent;
+	color: var(--background);
+	border: none;
+	font-weight: 600;
+	font-size: 2.6rem;
+}
+
+.dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.dot {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	padding: 0;
+}
+
+.dot[aria-active='true'] {
+	background-color: var(--primary);
+}
