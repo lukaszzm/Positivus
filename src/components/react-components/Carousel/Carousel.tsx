@@ -17,14 +17,11 @@ interface CarouselProps {
 export const Carousel = ({ items }: CarouselProps) => {
 	const [activeItem, setActiveItem] = useState(0);
 
-	const baseValue = useMemo(() => (items.length - 1) * 400, []);
-
-	const xValue = baseValue - activeItem * 800;
-	const translateX = `translateX(${xValue}px)`;
+	const translateX = `translateX(-${activeItem * 100}%)`;
 
 	return (
 		<div className={styles.carousel}>
-			<div className={styles['carousel__items-wrapper']} style={{ transform: translateX }}>
+			<div className={styles['carousel__items-container']} style={{ transform: translateX }}>
 				{items.map((item, index) => (
 					<CarouselItem key={index} {...item} />
 				))}
