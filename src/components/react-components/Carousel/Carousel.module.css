@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 124px;
+	gap: 42px;
 	overflow: hidden;
 }
 
@@ -18,4 +18,16 @@
 
 .carousel__controls {
 	display: flex;
+}
+
+@media (min-width: 768px) {
+	.carousel {
+		gap: 76px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.carousel {
+		gap: 124px;
+	}
 }

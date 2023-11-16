@@ -1,6 +1,6 @@
 import styles from './Carousel.module.css';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { CarouselItem } from './CarouselItem';
 import { CarouselControls } from './CarouselControls';
 
