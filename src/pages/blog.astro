@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon';
+---
+
+<Layout title="Positivus - Blog">
+	<section id="blog">
+		<Icon name="no-blog-posts" class="blog__icon" />
+		<p>Sorry, we don't have any blog posts yet.</p>
+	</section>
+</Layout>
+
+<style>
+	#blog {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 95px;
+		padding: 20px;
+	}
+
+	#blog p {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.blog__icon {
+		max-width: 640px;
+	}
+</style>
