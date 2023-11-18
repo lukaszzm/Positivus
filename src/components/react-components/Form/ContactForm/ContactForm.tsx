@@ -38,7 +38,7 @@ export const ContactForm = () => {
 				<VariantSelect />
 				<FormField label="Name" name="name" />
 				<FormField label="Email" name="email" />
-				<FormField label="Message" name="email" as="textarea" />
+				<FormField label="Message" name="message" as="textarea" />
 
 				{isSuccess && (
 					<SuccessAlert text="Your message has been successfully delivered. Our team will contact you as soon as possible at the email address you provided." />

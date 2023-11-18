@@ -18,8 +18,8 @@ const links: Array<{ label: string; href: string }> = [
 		href: '/#use-cases',
 	},
 	{
-		label: 'Pricing',
-		href: '/#pricing',
+		label: 'Team',
+		href: '/team',
 	},
 	{
 		label: 'Blog',
@@ -41,7 +41,9 @@ const links: Array<{ label: string; href: string }> = [
 				</Link>
 			))
 		}
-		<Button variant="secondary">Request a quote</Button>
+		<a href="/#contact">
+			<Button variant="secondary">Request a quote</Button>
+		</a>
 	</div>
 
 	<HamburgerMenu />
