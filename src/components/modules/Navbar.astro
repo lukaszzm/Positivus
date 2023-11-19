@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon';
 import Link from '../elements/Link.astro';
 import Button from '../elements/Button.astro';
-import HamburgerMenu from '../elements/HamburgerMenu.astro';
+import { HamburgerMenu } from '../react-components/HamburgerMenu';
 
 const links: Array<{ label: string; href: string }> = [
 	{
@@ -46,13 +46,13 @@ const links: Array<{ label: string; href: string }> = [
 		</a>
 	</div>
 
-	<HamburgerMenu />
+	<HamburgerMenu links={links} client:load />
 </nav>
 
 <style>
 	nav {
 		display: flex;
-		padding: 0 20px;
+		padding: 20px;
 		justify-content: space-between;
 		align-items: center;
 	}
