@@ -2,6 +2,13 @@
 import '@fontsource-variable/space-grotesk';
 import Navbar from '../components/modules/Navbar.astro';
 import Footer from '../components/modules/Footer.astro';
+import GlobalStyles from '../styles/GlobalStyles.astro';
+import ButtonStyles from '../styles/ButtonStyles.astro';
+import CardStyles from '../styles/CardStyles.astro';
+import HeadingStyles from '../styles/HeadingStyles.astro';
+import InputStyles from '../styles/InputStyles.astro';
+import LinkStyles from '../styles/LinkStyles.astro';
+import TypographyStyles from '../styles/TypographyStyles.astro';
 
 interface Props {
 	title: string;
@@ -25,210 +32,12 @@ const { title } = Astro.props;
 		<slot />
 		<Footer />
 	</body>
+
+	<GlobalStyles />
+	<ButtonStyles />
+	<CardStyles />
+	<HeadingStyles />
+	<InputStyles />
+	<LinkStyles />
+	<TypographyStyles />
 </html>
-<style is:global>
-	:root {
-		--primary: #b9ff66;
-		--secondary: #191a23;
-		--muted: #f3f3f3;
-		--muted-dark: #292a32;
-		--background: #fff;
-		--error: #e33d3d;
-		--success: #b9ffb6;
-		--font-family: 'Space Grotesk Variable';
-	}
-
-	* {
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		font-family: var(--font-family), sans-serif;
-		font-size: 16px;
-		background: var(--background);
-		color: var(--secondary);
-		scroll-behavior: smooth;
-		margin: 0;
-		padding: 0;
-	}
-
-	section,
-	nav,
-	footer {
-		width: 100%;
-		max-width: 1440px;
-		padding: 20px;
-		margin: 35px auto;
-	}
-
-	h1 {
-		font-size: 3rem;
-		font-weight: 500;
-		margin: 0;
-	}
-
-	h2 {
-		font-size: 2.25rem;
-		font-weight: 500;
-		margin: 0;
-	}
-
-	h3 {
-		font-size: 1.6rem;
-		font-weight: 500;
-		margin: 0;
-	}
-
-	h4 {
-		font-size: 1.1rem;
-		font-weight: 500;
-		margin: 0;
-	}
-
-	p {
-		font-size: 1rem;
-		font-weight: 400;
-		margin: 0;
-	}
-
-	input,
-	textarea {
-		padding: 18px 30px;
-		border-radius: 15px;
-		font-family: var(--font-family);
-		font-size: 1.125rem;
-		border: 1px solid var(--secondary);
-		resize: none;
-	}
-
-	label {
-		font-weight: 600;
-		margin-bottom: 5px;
-	}
-
-	input:focus,
-	textarea:focus {
-		border-color: var(--primary);
-		outline: 2px solid var(--primary);
-	}
-
-	.heading {
-		padding: 0px 7px;
-		border-radius: 7px;
-		max-width: 100%;
-	}
-
-	.heading-primary {
-		background-color: var(--primary);
-	}
-
-	.heading-secondary {
-		background-color: var(--background);
-	}
-
-	.heading-tertiary {
-		background-color: var(--secondary);
-		color: var(--background);
-	}
-
-	.card {
-		width: 100%;
-		background-color: var(--muted);
-		border: 1px solid var(--secondary);
-		border-radius: 45px;
-		padding: 50px;
-		box-shadow: 0px 5px 0px 0px var(--secondary);
-	}
-
-	.card-primary {
-		background-color: var(--primary);
-	}
-
-	.card-secondary {
-		background-color: var(--secondary);
-	}
-
-	.card-background {
-		background-color: var(--background);
-	}
-
-	.card-muted {
-		background-color: var(--muted);
-	}
-
-	button {
-		display: inline-flex;
-		padding: 20px 35px;
-		align-items: flex-start;
-		gap: 10px;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 28px;
-		border-radius: 14px;
-		border: 1px solid;
-		cursor: pointer;
-		transition-duration: 0.15s;
-	}
-
-	button:hover {
-		transform: scale(1.05);
-	}
-
-	button:disabled {
-		opacity: 0.5;
-		transform: none;
-		cursor: default;
-	}
-
-	.button-primary {
-		background-color: var(--secondary);
-		border-color: var(--secondary);
-		color: var(--background);
-	}
-
-	.button-secondary {
-		background-color: transparent;
-		border-color: var(--secondary);
-	}
-
-	.button-tertiary {
-		background-color: var(--primary);
-		border-color: var(--primary);
-	}
-
-	@media (min-width: 768px) {
-		h1 {
-			font-size: 3.75rem;
-			font-weight: 500;
-		}
-
-		h2 {
-			font-size: 2.5rem;
-			font-weight: 500;
-		}
-
-		h3 {
-			font-size: 1.875rem;
-			font-weight: 500;
-		}
-
-		h4 {
-			font-size: 1.25rem;
-			font-weight: 500;
-		}
-
-		p {
-			font-size: 1.125rem;
-			font-weight: 400;
-		}
-
-		section,
-		footer,
-		nav {
-			padding: 30px 100px;
-			margin: 70px auto;
-		}
-	}
-</style>

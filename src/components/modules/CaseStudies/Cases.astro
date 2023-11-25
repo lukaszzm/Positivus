@@ -20,10 +20,10 @@ const useCases: Array<{ description: string; href: string }> = [
 ];
 ---
 
-<div class="case__wrapper card card-secondary">
+<div class="case__wrapper card card-foreground">
 	{
 		useCases.map(({ description, href }) => (
-			<div class="case__item card card-secondary">
+			<div class="case__item card card-foreground">
 				<p>{description}</p>
 				<Link href={href} variant="secondary" textColor="primary" iconColor="color-1">
 					Learn more

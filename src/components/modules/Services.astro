@@ -3,51 +3,56 @@ import SectionLabel from '../elements/SectionLabel.astro';
 import Proposal from './Services/Proposal.astro';
 import Service from './Services/Service.astro';
 
-const services: Array<{ title: string; icon: string; href: string; bgColor: 'primary' | 'secondary' | 'background'; headingVariant: 'primary' | 'secondary' }> =
-	[
-		{
-			title: 'Search Engine Optimization',
-			icon: 'webSearch',
-			href: '',
-			bgColor: 'background',
-			headingVariant: 'primary',
-		},
-		{
-			title: 'Pay-per-click Advertising',
-			icon: 'advertising',
-			href: '',
-			bgColor: 'primary',
-			headingVariant: 'secondary',
-		},
-		{
-			title: 'Social Media Marketing',
-			icon: 'socialMedia',
-			href: '',
-			bgColor: 'secondary',
-			headingVariant: 'secondary',
-		},
-		{
-			title: 'Email Marketing',
-			icon: 'email',
-			href: '',
-			bgColor: 'background',
-			headingVariant: 'primary',
-		},
-		{
-			title: 'Content Creation',
-			icon: 'contentCreator',
-			href: '',
-			bgColor: 'primary',
-			headingVariant: 'secondary',
-		},
-		{
-			title: 'Analytics and Tracking',
-			icon: 'analytics',
-			href: '',
-			bgColor: 'secondary',
-			headingVariant: 'primary',
-		},
-	];
+const services: Array<{
+	title: string;
+	icon: string;
+	href: string;
+	bgColor: 'accent' | 'foreground' | 'background';
+	headingVariant: 'accent' | 'foreground' | 'background';
+}> = [
+	{
+		title: 'Search Engine Optimization',
+		icon: 'webSearch',
+		href: '',
+		bgColor: 'background',
+		headingVariant: 'accent',
+	},
+	{
+		title: 'Pay-per-click Advertising',
+		icon: 'advertising',
+		href: '',
+		bgColor: 'accent',
+		headingVariant: 'foreground',
+	},
+	{
+		title: 'Social Media Marketing',
+		icon: 'socialMedia',
+		href: '',
+		bgColor: 'foreground',
+		headingVariant: 'background',
+	},
+	{
+		title: 'Email Marketing',
+		icon: 'email',
+		href: '',
+		bgColor: 'background',
+		headingVariant: 'accent',
+	},
+	{
+		title: 'Content Creation',
+		icon: 'contentCreator',
+		href: '',
+		bgColor: 'accent',
+		headingVariant: 'foreground',
+	},
+	{
+		title: 'Analytics and Tracking',
+		icon: 'analytics',
+		href: '',
+		bgColor: 'foreground',
+		headingVariant: 'accent',
+	},
+];
 ---
 
 <section id="services">

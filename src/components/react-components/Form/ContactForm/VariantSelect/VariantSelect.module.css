@@ -4,5 +4,5 @@
 }
 
 input[type='radio'] {
-	accent-color: var(--secondary);
+	accent-color: var(--foreground);
 }

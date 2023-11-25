@@ -1,6 +1,6 @@
 ---
 interface Props {
-	variant?: 'primary' | 'secondary' | 'tertiary';
+	variant?: 'accent' | 'primary' | 'ghost';
 	class?: string;
 }
 
@@ -10,21 +10,3 @@ const { variant = 'primary', class: className, ...rest } = Astro.props;
 <button class:list={['button', `button-${variant}`, className]} {...rest}>
 	<slot />
 </button>
-
-<style>
-	.button-primary {
-		background-color: var(--secondary);
-		border-color: var(--secondary);
-		color: var(--background);
-	}
-
-	.button-secondary {
-		background-color: transparent;
-		border-color: var(--secondary);
-	}
-
-	.button-tertiary {
-		background-color: var(--primary);
-		border-color: var(--primary);
-	}
-</style>

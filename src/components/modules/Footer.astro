@@ -6,7 +6,7 @@ import PrivacyPolicy from './Footer/PrivacyPolicy.astro';
 ---
 
 <footer>
-	<div class="card card-secondary footer__card">
+	<div class="card card-foreground footer__card">
 		<NavigationPanel />
 		<Contact />
 		<MobileSocials />
@@ -30,12 +30,12 @@ import PrivacyPolicy from './Footer/PrivacyPolicy.astro';
 		flex-direction: column;
 		align-items: center;
 		gap: 37px;
-		color: var(--muted);
+		color: var(--muted-background);
 	}
 
 	.footer__separator {
 		width: 100%;
-		border-bottom: 1px solid var(--muted);
+		border-bottom: 1px solid var(--muted-background);
 	}
 
 	@media (min-width: 1024px) {
@@ -49,7 +49,7 @@ import PrivacyPolicy from './Footer/PrivacyPolicy.astro';
 			flex-direction: column;
 			align-items: center;
 			gap: 50px;
-			color: var(--muted);
+			color: var(--muted-background);
 		}
 	}
 </style>

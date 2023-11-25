@@ -5,13 +5,13 @@
 }
 
 .accordion[data-state='open'] {
-	background-color: var(--primary);
+	background-color: var(--accent);
 }
 
 .control {
 	width: 100%;
 	margin: 0;
-	padding: 15px;
+	padding: 35px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -30,21 +30,21 @@
 }
 
 .number {
-	font-size: 2.125rem;
+	font-size: 6rem;
 }
 
 .heading {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 }
 
 .icon {
 	width: 30px;
 	height: 30px;
-	border: 1px solid var(--secondary);
+	border: 1px solid var(--foreground);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--muted);
+	background-color: var(--muted-background);
 	border-radius: 50%;
 	font-size: 2.5rem;
 	font-weight: 600;
@@ -62,56 +62,10 @@
 }
 
 .content[data-state='open'] {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .content > p {
-	border-top: 1px solid var(--secondary);
-	padding: 30px 0;
-}
-
-@media (min-width: 768px) {
-	.accordion {
-		padding: 30px 45px;
-	}
-
-	.label {
-		gap: 25px;
-	}
-
-	.number {
-		font-size: 3.35rem;
-	}
-
-	.heading {
-		font-size: 1.5rem;
-	}
-
-	.icon {
-		width: 42px;
-		height: 42px;
-	}
-}
-
-@media (min-width: 1024px) {
-	.accordion {
-		padding: 41px 60px;
-	}
-
-	.label {
-		gap: 25px;
-	}
-
-	.number {
-		font-size: 3.75rem;
-	}
-
-	.heading {
-		font-size: 1.875rem;
-	}
-
-	.icon {
-		width: 58px;
-		height: 58px;
-	}
+	border-top: 1px solid var(--foreground);
+	padding: 30px 20px;
 }

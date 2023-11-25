@@ -8,7 +8,7 @@
 }
 
 .carousel-item__quote {
-	border: 1px solid var(--primary);
+	border: 1px solid var(--accent);
 	border-radius: 45px;
 	padding: 52px;
 }
@@ -18,7 +18,7 @@
 }
 
 .carousel-item__by__name {
-	color: var(--primary);
+	color: var(--accent);
 }
 
 @media (min-width: 768px) {

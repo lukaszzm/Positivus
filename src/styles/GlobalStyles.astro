@@ -1,0 +1,87 @@
+<style is:global>
+	:root {
+		--accent: #b9ff66;
+		--foreground: #191a23;
+		--muted-background: #f3f3f3;
+		--muted-foreground: #292a32;
+		--background: #fff;
+		--error: #e33d3d;
+		--success: #b9ffb6;
+		--font-family: 'Space Grotesk Variable';
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-size: 62.5%;
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	body {
+		font-family: var(--font-family), sans-serif;
+		font-size: 16px;
+		font-size: 1.6rem;
+		line-height: 1.5;
+		background: var(--background);
+		color: var(--foreground);
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	#root,
+	#__next {
+		isolation: isolate;
+	}
+
+	section,
+	nav,
+	footer {
+		width: 100%;
+		max-width: 1440px;
+		padding: 20px;
+		margin: 35px auto;
+	}
+
+	@media (min-width: 768px) {
+		section,
+		footer,
+		nav {
+			padding: 30px 100px;
+			margin: 70px auto;
+		}
+	}
+</style>

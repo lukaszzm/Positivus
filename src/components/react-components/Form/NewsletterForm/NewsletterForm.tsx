@@ -36,7 +36,7 @@ export const NewsletterForm = () => {
 
 					{isSuccess && <SuccessAlert text="You have successfully subscribed to our list." />}
 
-					<button disabled={isSubmitting} className="button-tertiary" type="submit">
+					<button disabled={isSubmitting} className="button-accent" type="submit">
 						Subscribe to news
 					</button>
 				</form>

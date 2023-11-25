@@ -34,47 +34,33 @@ const { variant, textColor, iconColor, href } = Astro.props;
 		display: flex;
 		align-items: center;
 		gap: 15px;
-		font-size: 20px;
 		width: auto;
 		text-decoration: none;
 		position: relative;
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 0;
-			bottom: 0;
-			height: 2px;
-			margin: -5px 0;
-			left: 0;
-			transition: all 0.2s ease-in 0s;
-		}
-		&:hover:after {
-			width: 100%;
-		}
+		font-size: 2.1rem;
 	}
 
 	.icon-1 {
-		width: 41px;
+		width: 4rem;
 		border-radius: 50%;
-		background-color: var(--primary);
+		background-color: var(--accent);
 	}
 
 	.icon-2 {
-		width: 40px;
+		width: 4rem;
 	}
 
 	.primary {
-		color: var(--primary);
+		color: var(--accent);
 		&:after {
-			background-color: var(--primary);
+			background-color: var(--accent);
 		}
 	}
 
 	.secondary {
-		color: var(--secondary);
+		color: var(--foreground);
 		&:after {
-			background-color: var(--secondary);
+			background-color: var(--foreground);
 		}
 	}
 
@@ -86,32 +72,32 @@ const { variant, textColor, iconColor, href } = Astro.props;
 	}
 
 	.color-1 {
-		background-color: var(--primary);
+		background-color: var(--accent);
 		color: var(--background);
 	}
 
 	.color-2 {
-		background-color: var(--primary);
-		color: var(--secondary);
+		background-color: var(--accent);
+		color: var(--foreground);
 	}
 
 	.color-3 {
-		background-color: var(--secondary);
+		background-color: var(--foreground);
 		color: var(--background);
 	}
 
 	.color-4 {
-		background-color: var(--secondary);
-		color: var(--primary);
+		background-color: var(--foreground);
+		color: var(--accent);
 	}
 
 	.color-5 {
 		background-color: var(--background);
-		color: var(--secondary);
+		color: var(--foreground);
 	}
 
 	.color-6 {
 		background-color: var(--background);
-		color: var(--primary);
+		color: var(--accent);
 	}
 </style>
