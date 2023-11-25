@@ -14,10 +14,6 @@
 		transition-duration: 0.15s;
 	}
 
-	button:hover {
-		transform: scale(1.05);
-	}
-
 	button:disabled {
 		opacity: 0.5;
 		transform: none;
@@ -30,13 +26,25 @@
 		color: var(--background);
 	}
 
+	.button-primary:hover {
+		background-color: var(--muted-foreground);
+	}
+
 	.button-ghost {
 		background-color: transparent;
 		border-color: var(--foreground);
 	}
 
+	.button-ghost:hover {
+		background-color: var(--muted-background);
+	}
+
 	.button-accent {
 		background-color: var(--accent);
 		border-color: var(--accent);
+	}
+
+	.button-accent:hover {
+		background-color: var(--muted-accent);
 	}
 </style>
