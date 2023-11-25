@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+	number: number;
+	title: string;
+	description: string;
+	src: ImageMetadata;
+	alt: string;
+	reverse?: boolean;
+}
+
+const { number, title, description, src, alt, reverse } = Astro.props;
+---
+
+<div class:list={['pillar', reverse && 'pillar-reverse']}>
+	<div class="pillar__info">
+		<h3 class="pillar__info__title">{number}. {title}</h3>
+		<p class="pillar__info__desc">
+			{description}
+		</p>
+	</div>
+	<Image src={src} alt={alt} class:list={['card', 'pillar__image']} quality="low" />
+</div>
+
+<style>
+	.pillar {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		gap: 50px;
+	}
+
+	.pillar__info {
+		flex: 1 1 50%;
+	}
+
+	.pillar__info__title {
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+
+	.pillar__info__desc {
+		font-size: 1.2rem;
+		line-height: 1.4;
+	}
+
+	.pillar__image {
+		flex: 1 1 50%;
+		max-width: 100%;
+		height: auto;
+		padding: 0;
+	}
+
+	@media (min-width: 1024px) {
+		.pillar {
+			flex-direction: row;
+			padding: 0 50px;
+		}
+
+		.pillar-reverse {
+			flex-direction: row-reverse;
+		}
+
+		.pillar__image {
+			max-width: 50%;
+			height: auto;
+		}
+	}
+</style>

@@ -48,18 +48,28 @@ const teamMembers: Array<{ src: ImageMetadata; name: string; position: string; d
 		description: '2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries',
 	},
 ];
+
+interface Props {
+	shortVersion?: boolean;
+}
+
+const { shortVersion } = Astro.props;
 ---
 
 <section id="team">
 	<SectionLabel title="Team" description="Meet the skilled and experienced team behind our successful digital marketing strategies" />
 
 	<div class="team__container">
-		{teamMembers.map((el) => <TeamMember {...el} />)}
+		{shortVersion ? teamMembers.slice(0, 3).map((el) => <TeamMember {...el} />) : teamMembers.map((el) => <TeamMember {...el} />)}
 	</div>
 
-	<a href="/team">
-		<Button class="team__button">See all team</Button>
-	</a>
+	{
+		shortVersion && (
+			<a href="/about-us#team">
+				<Button class="team__button">See all team</Button>
+			</a>
+		)
+	}
 </section>
 
 <style>
