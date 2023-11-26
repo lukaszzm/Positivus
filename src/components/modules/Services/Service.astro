@@ -16,7 +16,6 @@ interface Props {
 const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 ---
 
-{console.log(rest)}
 <div class:list={['service', 'card', `card-${bgColor}`]}>
 	<div class="service__header">
 		<h3 class={`heading heading-${headingVariant}`}>{title}</h3>
