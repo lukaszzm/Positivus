@@ -1,5 +1,5 @@
 ---
-import Link from '../../elements/Link.astro';
+import LinkWithArrow from '../../elements/LinkWithArrow.astro';
 
 const useCases: Array<{ description: string; href: string }> = [
 	{
@@ -25,9 +25,9 @@ const useCases: Array<{ description: string; href: string }> = [
 		useCases.map(({ description, href }) => (
 			<div class="case__item card card-foreground">
 				<p>{description}</p>
-				<Link href={href} variant="secondary" textColor="primary" iconColor="color-1">
+				<LinkWithArrow href={href} iconPosition="right">
 					Learn more
-				</Link>
+				</LinkWithArrow>
 			</div>
 		))
 	}
@@ -44,6 +44,7 @@ const useCases: Array<{ description: string; href: string }> = [
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		align-items: flex-start;
 		padding: 20px;
 		padding-top: 40px;
 		border-top: 1px solid var(--background);

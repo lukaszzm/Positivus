@@ -1,0 +1,82 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+	href: string;
+	textColor?: 'accent' | 'foreground' | 'background';
+	iconPosition?: 'left' | 'right';
+	iconBackground?: 'accent' | 'foreground' | 'background';
+	iconColor?: 'accent' | 'foreground' | 'background';
+}
+
+const { iconPosition = 'left', textColor = 'accent', iconColor = 'accent', iconBackground = 'foreground', href } = Astro.props;
+---
+
+<a href={href} class:list={[`icon-${iconPosition}`, `text-${textColor}`]}>
+	<Icon name="mi:arrow-right-up" class:list={['icon', `icon-${iconColor}`, `icon-bg-${iconBackground}`]} />
+	<span>
+		<slot />
+	</span>
+</a>
+
+<style>
+	a {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		font-size: 2rem;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.icon-left {
+		flex-direction: row;
+	}
+
+	.icon-right {
+		flex-direction: row-reverse;
+	}
+
+	.icon {
+		width: 4.5rem;
+		border-radius: 50%;
+	}
+
+	.text-accent {
+		color: var(--accent);
+	}
+
+	.text-foreground {
+		color: var(--foreground);
+	}
+
+	.text-background {
+		color: var(--background);
+	}
+
+	.icon-accent {
+		color: var(--accent);
+	}
+
+	.icon-foreground {
+		color: var(--foreground);
+	}
+
+	.icon-background {
+		color: var(--background);
+	}
+
+	.icon-bg-accent {
+		background-color: var(--accent);
+	}
+
+	.icon-bg-foreground {
+		background-color: var(--foreground);
+	}
+
+	.icon-bg-background {
+		background-color: var(--background);
+	}
+</style>

@@ -7,22 +7,31 @@ const services: Array<{
 	title: string;
 	icon: string;
 	href: string;
-	bgColor: 'accent' | 'foreground' | 'background';
+	bgColor: 'accent' | 'foreground' | 'muted';
 	headingVariant: 'accent' | 'foreground' | 'background';
+	iconBackground: 'accent' | 'foreground' | 'background';
+	iconColor: 'accent' | 'foreground' | 'background';
+	textColor: 'accent' | 'foreground' | 'background';
 }> = [
 	{
 		title: 'Search Engine Optimization',
 		icon: 'webSearch',
 		href: '',
-		bgColor: 'background',
+		bgColor: 'muted',
 		headingVariant: 'accent',
+		iconBackground: 'foreground',
+		iconColor: 'accent',
+		textColor: 'foreground',
 	},
 	{
 		title: 'Pay-per-click Advertising',
 		icon: 'advertising',
 		href: '',
 		bgColor: 'accent',
-		headingVariant: 'foreground',
+		headingVariant: 'background',
+		iconBackground: 'foreground',
+		iconColor: 'accent',
+		textColor: 'foreground',
 	},
 	{
 		title: 'Social Media Marketing',
@@ -30,20 +39,29 @@ const services: Array<{
 		href: '',
 		bgColor: 'foreground',
 		headingVariant: 'background',
+		iconBackground: 'background',
+		iconColor: 'foreground',
+		textColor: 'background',
 	},
 	{
 		title: 'Email Marketing',
 		icon: 'email',
 		href: '',
-		bgColor: 'background',
+		bgColor: 'muted',
 		headingVariant: 'accent',
+		iconBackground: 'foreground',
+		iconColor: 'accent',
+		textColor: 'foreground',
 	},
 	{
 		title: 'Content Creation',
 		icon: 'contentCreator',
 		href: '',
 		bgColor: 'accent',
-		headingVariant: 'foreground',
+		headingVariant: 'background',
+		iconBackground: 'foreground',
+		iconColor: 'accent',
+		textColor: 'foreground',
 	},
 	{
 		title: 'Analytics and Tracking',
@@ -51,6 +69,9 @@ const services: Array<{
 		href: '',
 		bgColor: 'foreground',
 		headingVariant: 'accent',
+		iconBackground: 'background',
+		iconColor: 'foreground',
+		textColor: 'background',
 	},
 ];
 ---

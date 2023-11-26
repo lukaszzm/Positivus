@@ -4,4 +4,16 @@
 		text-decoration: none;
 		font-size: 1.6rem;
 	}
+
+	.link-highlight {
+		box-shadow: inset 0 0 0 0 var(--accent);
+		color: var(--foreground);
+		margin: 0 -0.45rem;
+		padding: 0 0.45rem;
+		transition: box-shadow 0.3s ease-in-out;
+	}
+
+	.link-highlight:hover {
+		box-shadow: inset 100px 0 0 0 var(--accent);
+	}
 </style>

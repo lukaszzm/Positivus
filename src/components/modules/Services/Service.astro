@@ -1,34 +1,30 @@
 ---
 import { Icon } from 'astro-icon';
-import Link from '../../elements/Link.astro';
+import LinkWithArrow from '../../elements/LinkWithArrow.astro';
 
 interface Props {
 	title: string;
 	icon: string;
 	href: string;
+	bgColor: 'accent' | 'foreground' | 'muted';
 	headingVariant: 'accent' | 'foreground' | 'background';
-	bgColor: 'accent' | 'foreground' | 'background';
+	iconBackground: 'accent' | 'foreground' | 'background';
+	iconColor: 'accent' | 'foreground' | 'background';
+	textColor: 'accent' | 'foreground' | 'background';
 }
 
-const { title, icon, href, headingVariant, bgColor } = Astro.props;
+const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 ---
 
+{console.log(rest)}
 <div class:list={['service', 'card', `card-${bgColor}`]}>
 	<div class="service__header">
 		<h3 class={`heading heading-${headingVariant}`}>{title}</h3>
 	</div>
 	<div class="service__link">
-		{
-			bgColor === 'foreground' ? (
-				<Link href={href} variant="primary" textColor="background" iconColor="color-5">
-					<span class="service__link__label">Learn more</span>
-				</Link>
-			) : (
-				<Link href={href} variant="primary" textColor="secondary" iconColor="color-4">
-					<span class="service__link__label">Learn more</span>
-				</Link>
-			)
-		}
+		<LinkWithArrow href={href} {...rest}>
+			<span class="service__link__label">Learn more</span>
+		</LinkWithArrow>
 	</div>
 	<Icon name={icon} class="service__image" />
 </div>
