@@ -1,5 +1,5 @@
 .form-container {
-	background-color: var(--muted-dark);
+	background-color: var(--muted-foreground);
 }
 
 .form-container input {

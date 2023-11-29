@@ -20,7 +20,7 @@ const { number, title, description, src, alt, reverse } = Astro.props;
 			{description}
 		</p>
 	</div>
-	<Image src={src} alt={alt} class:list={['card', 'pillar__image']} quality="low" />
+	<Image src={src} alt={alt} class:list={['card', 'pillar__image']} />
 </div>
 
 <style>
