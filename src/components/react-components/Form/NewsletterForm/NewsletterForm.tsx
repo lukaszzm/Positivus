@@ -1,4 +1,4 @@
-import { useForm, type SubmitHandler, Form, FormProvider } from 'react-hook-form';
+import { useForm, type SubmitHandler, FormProvider } from 'react-hook-form';
 import styles from './NewsletterForm.module.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { newsletterSchema, type Newsletter } from '../../../../schemas/newsletterSchema';
@@ -10,16 +10,16 @@ export const NewsletterForm = () => {
 	const form = useForm<Newsletter>({
 		resolver: zodResolver(newsletterSchema),
 		defaultValues: {
-			email: '',
+			newsletterEmail: '',
 		},
 	});
 	const [isSuccess, setIsSuccess] = useState(false);
 	const {
 		handleSubmit,
-		formState: { isSubmitting, errors },
+		formState: { isSubmitting },
 	} = form;
 
-	const onSubmit: SubmitHandler<Newsletter> = async (data) => {
+	const onSubmit: SubmitHandler<Newsletter> = async () => {
 		setIsSuccess(false);
 
 		// MOCK REQUEST
@@ -29,10 +29,10 @@ export const NewsletterForm = () => {
 	};
 
 	return (
-		<div className={`card ${styles['form-container']}`}>
+		<div className={`card card-muted-dark ${styles['form-container']}`}>
 			<FormProvider {...form}>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<FormField label="Email" name="email" />
+					<FormField label="Email" name="newsletterEmail" placeholder="example@example.com" />
 
 					{isSuccess && <SuccessAlert text="You have successfully subscribed to our list." />}
 

@@ -36,9 +36,9 @@ export const ContactForm = () => {
 		<FormProvider {...form}>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 				<VariantSelect />
-				<FormField label="Name" name="name" />
-				<FormField label="Email" name="email" />
-				<FormField label="Message" name="message" as="textarea" />
+				<FormField label="Name" name="name" placeholder="name" />
+				<FormField label="Email" name="email" placeholder="example@example.com" />
+				<FormField label="Message" name="message" as="textarea" placeholder="your message..." />
 
 				{isSuccess && (
 					<SuccessAlert text="Your message has been successfully delivered. Our team will contact you as soon as possible at the email address you provided." />
