@@ -4,7 +4,7 @@ import { NewsletterForm } from '../../react-components/Form/NewsletterForm';
 
 <div class="contact">
 	<div class="contact__info">
-		<h4 class="heading heading-accent">Contact us:</h4>
+		<p class:list={['heading', 'heading-accent', 'contact__info__heading']}>Contact us:</p>
 		<p>Email: info@positivus.com</p>
 		<p>Phone: 555-567-8901</p>
 		<div class="contact__info__address">
@@ -32,7 +32,7 @@ import { NewsletterForm } from '../../react-components/Form/NewsletterForm';
 		gap: 15px;
 	}
 
-	.contact__info h4 {
+	.contact__info__heading {
 		margin-bottom: 12px;
 		color: var(--foreground);
 	}

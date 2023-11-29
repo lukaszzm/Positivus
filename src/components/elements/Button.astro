@@ -2,11 +2,12 @@
 interface Props {
 	variant?: 'accent' | 'primary' | 'ghost';
 	class?: string;
+	ariaLabel?: string;
 }
 
-const { variant = 'primary', class: className, ...rest } = Astro.props;
+const { variant = 'primary', class: className, ariaLabel } = Astro.props;
 ---
 
-<button class:list={['button', `button-${variant}`, className]} {...rest}>
+<button class:list={['button', `button-${variant}`, className]} aria-label={ariaLabel}>
 	<slot />
 </button>

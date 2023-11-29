@@ -20,9 +20,9 @@ export const FormField = ({ as, label, name }: FormFieldProps) => {
 			<label htmlFor={name}>{label}</label>
 
 			{as === 'textarea' ? (
-				<textarea {...register(name)} rows={4} placeholder={name} id={name} />
+				<textarea {...register(name)} rows={4} placeholder={name} id={name} autoComplete="off" />
 			) : (
-				<input {...register(name)} type="text" placeholder={name} id={name} />
+				<input {...register(name)} type="text" placeholder={name} id={name} autoComplete="off" />
 			)}
 
 			<p className={styles['error-message']}>

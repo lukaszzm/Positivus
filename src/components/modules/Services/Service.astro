@@ -21,7 +21,7 @@ const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 		<h3 class={`heading heading-${headingVariant}`}>{title}</h3>
 	</div>
 	<div class="service__link">
-		<LinkWithArrow href={href} {...rest}>
+		<LinkWithArrow href={href} {...rest} ariaLabel={`Learn more about ${title}`}>
 			<span class="service__link__label">Learn more</span>
 		</LinkWithArrow>
 	</div>

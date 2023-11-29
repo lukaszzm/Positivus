@@ -61,15 +61,15 @@ const { shortVersion } = Astro.props;
 
 	<div class="team__container">
 		{shortVersion ? teamMembers.slice(0, 3).map((el) => <TeamMember {...el} />) : teamMembers.map((el) => <TeamMember {...el} />)}
-	</div>
 
-	{
-		shortVersion && (
-			<a href="/about-us#team">
-				<Button class="team__button">See all team</Button>
-			</a>
-		)
-	}
+		{
+			shortVersion && (
+				<a href="/about-us#team">
+					<Button class="team__button">See all team</Button>
+				</a>
+			)
+		}
+	</div>
 </section>
 
 <style>

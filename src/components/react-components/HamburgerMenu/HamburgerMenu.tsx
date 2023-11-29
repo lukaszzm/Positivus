@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './HamburgerMenu.module.css';
 import { FiAlignRight, FiX } from 'react-icons/fi';
 import { useMediaQuery } from '../hooks/useMediaQuery';
@@ -31,7 +31,12 @@ export const HamburgerMenu = ({ links }: HamburgerMenuProps) => {
 
 	return (
 		<>
-			<button onClick={() => setIsOpen((prev) => !prev)} className={`${styles['menu__button']} ${isOpen && styles.active}`} aria-expanded={isOpen}>
+			<button
+				onClick={() => setIsOpen((prev) => !prev)}
+				className={`${styles['menu__button']} ${isOpen && styles.active}`}
+				aria-expanded={isOpen}
+				aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+			>
 				{isOpen ? <FiX /> : <FiAlignRight />}
 			</button>
 
