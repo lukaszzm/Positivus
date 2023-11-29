@@ -1,9 +1,14 @@
-<section id="main">
-	<h1>About us</h1>
+---
+import { getSectionById } from "@/utils/getSectionById";
+
+const { id, title, description } = getSectionById("mainAbout");
+---
+
+<section id={id}>
+	<h1>{title}</h1>
 	<div>
 		<p>
-			<span>Positivus</span> is a leading digital agency known for its innovative approach to creative solutions. Specializing in web design, digital marketing,
-			and interactive media, we combine technology with artistic flair to deliver customized experiences.
+			<span>Positivus</span>{description}
 		</p>
 	</div>
 </section>

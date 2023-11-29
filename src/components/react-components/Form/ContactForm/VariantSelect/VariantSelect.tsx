@@ -1,4 +1,4 @@
-import type { Contact } from '../../../../../schemas/contactSchema';
+import type { Contact } from '@/schemas/contactSchema';
 import styles from './VariantSelect.module.css';
 import { useFormContext } from 'react-hook-form';
 

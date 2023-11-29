@@ -1,86 +1,15 @@
 ---
-import SectionLabel from '../elements/SectionLabel.astro';
+import SectionLabel from '@/components/elements/SectionLabel.astro';
 import Proposal from './Services/Proposal.astro';
 import Service from './Services/Service.astro';
+import { services } from "@/data/services"
+import { getSectionById } from '@/utils/getSectionById';
 
-const services: Array<{
-	title: string;
-	icon: string;
-	href: string;
-	bgColor: 'accent' | 'foreground' | 'muted';
-	headingVariant: 'accent' | 'foreground' | 'background';
-	iconBackground: 'accent' | 'foreground' | 'background';
-	iconColor: 'accent' | 'foreground' | 'background';
-	textColor: 'accent' | 'foreground' | 'background';
-}> = [
-	{
-		title: 'Search Engine Optimization',
-		icon: 'webSearch',
-		href: '',
-		bgColor: 'muted',
-		headingVariant: 'accent',
-		iconBackground: 'foreground',
-		iconColor: 'accent',
-		textColor: 'foreground',
-	},
-	{
-		title: 'Pay-per-click Advertising',
-		icon: 'advertising',
-		href: '',
-		bgColor: 'accent',
-		headingVariant: 'background',
-		iconBackground: 'foreground',
-		iconColor: 'accent',
-		textColor: 'foreground',
-	},
-	{
-		title: 'Social Media Marketing',
-		icon: 'socialMedia',
-		href: '',
-		bgColor: 'foreground',
-		headingVariant: 'background',
-		iconBackground: 'background',
-		iconColor: 'foreground',
-		textColor: 'background',
-	},
-	{
-		title: 'Email Marketing',
-		icon: 'email',
-		href: '',
-		bgColor: 'muted',
-		headingVariant: 'accent',
-		iconBackground: 'foreground',
-		iconColor: 'accent',
-		textColor: 'foreground',
-	},
-	{
-		title: 'Content Creation',
-		icon: 'contentCreator',
-		href: '',
-		bgColor: 'accent',
-		headingVariant: 'background',
-		iconBackground: 'foreground',
-		iconColor: 'accent',
-		textColor: 'foreground',
-	},
-	{
-		title: 'Analytics and Tracking',
-		icon: 'analytics',
-		href: '',
-		bgColor: 'foreground',
-		headingVariant: 'accent',
-		iconBackground: 'background',
-		iconColor: 'foreground',
-		textColor: 'background',
-	},
-];
+const { id, title, description } = getSectionById("services");
 ---
 
-<section id="services">
-	<SectionLabel
-		title="Services"
-		description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
-	/>
+<section id={id}>
+	<SectionLabel title={title} description={description} />
 
 	<div class="services__container">
 		{services.map((el) => <Service {...el} />)}

@@ -1,15 +1,11 @@
 ---
 import Icon from 'astro-icon';
 import { Image } from 'astro:assets';
+import type { TeamMember } from "@interfaces/TeamMember"
 
-interface Props {
-	src: ImageMetadata;
-	name: string;
-	position: string;
-	description: string;
-}
+interface Props extends TeamMember {}
 
-const { src, name, position, description } = Astro.props;
+const { src, name, position, description, linkedinProfile } = Astro.props;
 ---
 
 <div class="team-member card card-background">
@@ -20,7 +16,7 @@ const { src, name, position, description } = Astro.props;
 			<h4>{position}</h4>
 		</div>
 
-		<a href="https://www.linkedin.com/" class="team-member__overview__link" aria-label={`Link to ${name} linkedin profile`}>
+		<a href={linkedinProfile} class="team-member__overview__link" aria-label={`Link to ${name} linkedin profile`}>
 			<Icon name="brandico:linkedin" />
 		</a>
 	</div>

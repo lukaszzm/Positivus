@@ -1,14 +1,17 @@
 ---
-import Button from '../../elements/Button.astro';
+import Button from '@/components/elements/Button.astro';
 import Icon from 'astro-icon';
+import { proposal } from "@/data/proposal"
+
+const { title, description, buttonLabel, href } = proposal 
 ---
 
 <div class="proposal card card-muted">
 	<div class="proposal__text">
-		<h3>Let's make things happen</h3>
-		<p>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
-		<a href="#contact">
-			<Button>Get your proposal</Button>
+		<h3>{title}</h3>
+		<p>{description}</p>
+		<a href={href}>
+			<Button>{buttonLabel}</Button>
 		</a>
 	</div>
 	<Icon name="freeProposal" class="proposal__icon" />

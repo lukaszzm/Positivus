@@ -1,31 +1,15 @@
 ---
-import SectionLabel from '../elements/SectionLabel.astro';
-import { Carousel } from '../react-components/Carousel';
+import SectionLabel from '@/components/elements/SectionLabel.astro';
+import { Carousel } from '@react/Carousel';
+import { testimonals } from '@/data/testimonals';
+import { getSectionById } from '@/utils/getSectionById';
 
-const testimonals = [
-	{
-		quote:
-			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
-		name: 'First',
-		role: 'Marketing Director at XYZ Corp',
-	},
-	{
-		quote:
-			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
-		name: 'Second',
-		role: 'Marketing Director at XYZ Corp',
-	},
-	{
-		quote:
-			'We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.',
-		name: 'Third',
-		role: 'Marketing Director at XYZ Corp',
-	},
-];
+const { id, title, description } = getSectionById('testimonals');
+
 ---
 
-<section id="testimonals">
-	<SectionLabel title="Testimonals" description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services" />
+<section id={id}>
+	<SectionLabel title={title} description={description}  />
 
 	<div class="testimonals__container card card-foreground">
 		<Carousel items={testimonals} client:load />

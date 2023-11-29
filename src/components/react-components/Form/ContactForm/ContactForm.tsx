@@ -3,7 +3,7 @@ import { useForm, type SubmitHandler, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { VariantSelect } from './VariantSelect';
 import { useState } from 'react';
-import { contactSchema, type Contact } from '../../../../schemas/contactSchema';
+import { contactSchema, type Contact } from '@/schemas/contactSchema';
 import { FormField } from '../FormField';
 import { SuccessAlert } from '../SuccessAlert';
 

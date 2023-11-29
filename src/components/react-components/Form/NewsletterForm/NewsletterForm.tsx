@@ -1,7 +1,7 @@
 import { useForm, type SubmitHandler, FormProvider } from 'react-hook-form';
 import styles from './NewsletterForm.module.css';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { newsletterSchema, type Newsletter } from '../../../../schemas/newsletterSchema';
+import { newsletterSchema, type Newsletter } from '@/schemas/newsletterSchema';
 import { useState } from 'react';
 import { SuccessAlert } from '../SuccessAlert';
 import { FormField } from '../FormField';

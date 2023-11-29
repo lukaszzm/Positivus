@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import styles from './HamburgerMenu.module.css';
 import { FiAlignRight, FiX } from 'react-icons/fi';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import type { Route } from '@/interfaces/Route';
 
 interface HamburgerMenuProps {
-	links: Array<{ label: string; href: string }>;
+	links: Array<Route>;
 }
 
 const enableScrollbar = () => (document.body.style.overflow = 'auto');

@@ -1,12 +1,13 @@
 ---
+import type { ColorVariant } from '@/interfaces/ColorVariant';
 import { Icon } from 'astro-icon';
 
 interface Props {
 	href: string;
-	textColor?: 'accent' | 'foreground' | 'background';
 	iconPosition?: 'left' | 'right';
-	iconBackground?: 'accent' | 'foreground' | 'background';
-	iconColor?: 'accent' | 'foreground' | 'background';
+	textColor?: ColorVariant;
+	iconBackground?: ColorVariant;
+	iconColor?: ColorVariant;
 	ariaLabel?: string;
 }
 

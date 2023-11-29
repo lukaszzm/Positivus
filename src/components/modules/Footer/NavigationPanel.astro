@@ -1,27 +1,30 @@
 ---
 import { Icon } from 'astro-icon';
+import { companyContact } from '@/data/company-contact';
+import { routes } from '@/data/routes';
+
+
+const { linkedin, facebook, twitter } = companyContact.socials;
 ---
 
 <div class="navigation-panel">
 	<Icon name="logoWhite" class="navigation-panel__logo" />
 	<div class="navigation-panel__links">
-		<a href="">About us</a>
-		<a href="">Services</a>
-		<a href="">Use Cases</a>
-		<a href="">Pricing</a>
-		<a href="">Blog</a>
+		{routes.map(({href, label}) => (
+			<a href={href}>{label}</a>
+		))}
 	</div>
 
 	<div class="navigation-panel__socials">
-		<a href="https://www.linkedin.com/" aria-label="Link to company's linkedin profile">
+		<a href={linkedin} aria-label="Link to company's linkedin profile">
 			<Icon name="brandico:linkedin" />
 		</a>
 
-		<a href="https://www.facebook.com/" aria-label="Link to company's facebook profile">
+		<a href={facebook} aria-label="Link to company's facebook profile">
 			<Icon name="brandico:facebook" />
 		</a>
 
-		<a href="https://www.twitter.com/" aria-label="Link to company's twitter profile">
+		<a href={twitter} aria-label="Link to company's twitter profile">
 			<Icon name="brandico:twitter" />
 		</a>
 	</div>

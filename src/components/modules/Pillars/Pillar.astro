@@ -1,12 +1,8 @@
 ---
 import { Image } from 'astro:assets';
+import type { Pillar } from "@interfaces/Pillar"
 
-interface Props {
-	number: number;
-	title: string;
-	description: string;
-	src: ImageMetadata;
-	alt: string;
+interface Props extends Pillar {
 	reverse?: boolean;
 }
 

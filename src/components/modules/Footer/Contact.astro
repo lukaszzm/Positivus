@@ -1,15 +1,18 @@
 ---
-import { NewsletterForm } from '../../react-components/Form/NewsletterForm';
+import { NewsletterForm } from '@react/Form/NewsletterForm';
+import { companyContact } from "@/data/company-contact"
+
+const { email, phone, street, city } = companyContact
 ---
 
 <div class="contact">
 	<div class="contact__info">
 		<p class:list={['heading', 'heading-accent', 'contact__info__heading']}>Contact us:</p>
-		<p>Email: info@positivus.com</p>
-		<p>Phone: 555-567-8901</p>
+		<p>Email: {email}</p>
+		<p>Phone: {phone}</p>
 		<div class="contact__info__address">
-			<p>Address: 1234 Main St</p>
-			<p>Moonstone City, Stardust State 12345</p>
+			<p>Address: {street}</p>
+			<p>{city}</p>
 		</div>
 	</div>
 

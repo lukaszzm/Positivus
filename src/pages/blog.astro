@@ -1,12 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
 import { Icon } from 'astro-icon';
+
+const noPosts = "Sorry, we don't have any blog posts yet.";
 ---
 
 <Layout title="Blog - Positivus">
 	<section id="blog">
 		<Icon name="no-blog-posts" class="blog__icon" />
-		<p>Sorry, we don't have any blog posts yet.</p>
+		<p>{noPosts}</p>
 	</section>
 </Layout>
 

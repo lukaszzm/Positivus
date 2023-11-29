@@ -1,16 +1,18 @@
 ---
 import { Icon } from 'astro-icon';
-import Button from '../elements/Button.astro';
+import Button from '@/components/elements/Button.astro';
+import { getSectionById } from '@/utils/getSectionById';
+
+const { id, title, description } = getSectionById("header")
 ---
 
-<section id="header">
-	<div id="header__info">
-		<h1>Navigating the digital landscape for success</h1>
+<section id={id}>
+	<div class="header__info">
+		<h1>{title}</h1>
 		<p>
-			Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content
-			creation.
+			{description}
 		</p>
-		<a href="#contact">
+		<a href="/">
 			<Button>Book a consultation</Button>
 		</a>
 	</div>
@@ -23,17 +25,12 @@ import Button from '../elements/Button.astro';
 		flex-direction: column-reverse;
 	}
 
-	#header__info {
+	.header__info {
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		gap: 20px;
 		width: 100%;
-	}
-
-	#header__icon {
-		width: 100%;
-		height: 100%;
 	}
 
 	@media (min-width: 1024px) {
@@ -44,13 +41,13 @@ import Button from '../elements/Button.astro';
 			gap: 50px;
 		}
 
-		#header__info {
+		.header__info {
 			justify-content: flex-start;
 		}
 	}
 
 	@media (min-width: 1280px) {
-		#header__info {
+		.header__info {
 			gap: 35px;
 		}
 	}

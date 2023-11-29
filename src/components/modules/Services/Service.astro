@@ -1,17 +1,9 @@
 ---
 import { Icon } from 'astro-icon';
-import LinkWithArrow from '../../elements/LinkWithArrow.astro';
+import type { Service} from "@/interfaces/Service"
+import LinkWithArrow from '@/components/elements/LinkWithArrow.astro';
 
-interface Props {
-	title: string;
-	icon: string;
-	href: string;
-	bgColor: 'accent' | 'foreground' | 'muted';
-	headingVariant: 'accent' | 'foreground' | 'background';
-	iconBackground: 'accent' | 'foreground' | 'background';
-	iconColor: 'accent' | 'foreground' | 'background';
-	textColor: 'accent' | 'foreground' | 'background';
-}
+interface Props extends Service {}
 
 const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 ---

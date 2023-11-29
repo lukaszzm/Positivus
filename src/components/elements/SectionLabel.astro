@@ -1,8 +1,7 @@
 ---
-interface Props {
-	title: string;
-	description: string;
-}
+import type { Section } from '@/interfaces/Section';
+
+interface Props extends Omit<Section, "id"> {}
 
 const { title, description } = Astro.props;
 ---

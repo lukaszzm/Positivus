@@ -1,28 +1,12 @@
 ---
-import LinkWithArrow from '../../elements/LinkWithArrow.astro';
+import LinkWithArrow from '@/components/elements/LinkWithArrow.astro';
+import { cases } from "@/data/use-cases"
 
-const useCases: Array<{ description: string; href: string }> = [
-	{
-		description:
-			'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
-		href: '/',
-	},
-	{
-		description:
-			'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
-		href: '/',
-	},
-	{
-		description:
-			'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
-		href: '/',
-	},
-];
 ---
 
 <div class="case__wrapper card card-foreground">
 	{
-		useCases.map(({ description, href }) => (
+		cases.map(({ description, href }) => (
 			<div class="case__item card card-foreground">
 				<p>{description}</p>
 				<LinkWithArrow href={href} iconPosition="right">

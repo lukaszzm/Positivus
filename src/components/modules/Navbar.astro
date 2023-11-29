@@ -1,26 +1,8 @@
 ---
 import { Icon } from 'astro-icon';
-import Button from '../elements/Button.astro';
-import { HamburgerMenu } from '../react-components/HamburgerMenu';
-
-const links: Array<{ label: string; href: string }> = [
-	{
-		label: 'About us',
-		href: '/about-us',
-	},
-	{
-		label: 'Services',
-		href: '/#services',
-	},
-	{
-		label: 'Use cases',
-		href: '/#use-cases',
-	},
-	{
-		label: 'Blog',
-		href: '/blog',
-	},
-];
+import Button from '@/components/elements/Button.astro';
+import { HamburgerMenu } from '@react/HamburgerMenu';
+import { routes } from '@/data/routes';
 ---
 
 <nav>
@@ -30,7 +12,7 @@ const links: Array<{ label: string; href: string }> = [
 
 	<div id="desktop-menu">
 		{
-			links.map(({ label, href }) => (
+			routes.map(({ label, href }) => (
 				<a href={href} class="link-highlight">
 					{label}
 				</a>
@@ -41,7 +23,7 @@ const links: Array<{ label: string; href: string }> = [
 		</a>
 	</div>
 
-	<HamburgerMenu links={links} client:load />
+	<HamburgerMenu links={routes} client:load />
 </nav>
 
 <style>
