@@ -27,10 +27,8 @@ export const Accordion = ({ number, title, description }: AccordionProps) => {
 		<div className={`card ${styles.accordion}`} data-state={state}>
 			<h3 data-state={state} data-orientation="vertical">
 				<button className={styles.control} onClick={clickButtonHandler}>
-					<div className={styles.label}>
-						<span className={styles.number}>{number}</span>
-						<span className={styles.heading}>{title}</span>
-					</div>
+					<span className={styles.number}>{number}</span>
+					<span className={styles.heading}>{title}</span>
 					<span className={styles.icon}>{isOpen ? <FiMinusCircle /> : <FiPlusCircle />}</span>
 				</button>
 			</h3>
