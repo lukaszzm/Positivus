@@ -1,4 +1,4 @@
-import type { Service } from "@/interfaces/Service";
+import type { Service } from '@/interfaces/Service';
 
 export const services = [
 	{
@@ -61,4 +61,4 @@ export const services = [
 		iconColor: 'foreground',
 		textColor: 'background',
 	},
-] as const satisfies Array<Service>
+] as const satisfies Array<Service>;

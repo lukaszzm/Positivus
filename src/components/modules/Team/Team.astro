@@ -1,0 +1,63 @@
+---
+import { getSectionById } from '@/utils/getSectionById';
+import Button from '@ui/Button.astro';
+import SectionLabel from '@ui/SectionLabel.astro';
+import TeamMember from './TeamMember.astro';
+import { teamMembers } from '@/data/team';
+
+const { id, title, description } = getSectionById('team');
+
+interface Props {
+	shortVersion?: boolean;
+}
+
+const { shortVersion } = Astro.props;
+---
+
+<section id={id}>
+	<SectionLabel title={title} description={description} />
+
+	<div class="team__container">
+		{shortVersion ? teamMembers.slice(0, 3).map((el) => <TeamMember {...el} />) : teamMembers.map((el) => <TeamMember {...el} />)}
+
+		{
+			shortVersion && (
+				<a href="/about-us#team">
+					<Button class="team__button">See all team</Button>
+				</a>
+			)
+		}
+	</div>
+</section>
+
+<style>
+	.team__container {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 3rem;
+	}
+
+	.team__button {
+		margin-top: 3rem;
+		width: 100%;
+		justify-content: center;
+	}
+
+	@media (min-width: 1024px) {
+		.team__container {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 4rem;
+		}
+
+		.team__button {
+			margin-top: 4rem;
+			width: auto;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.team__container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

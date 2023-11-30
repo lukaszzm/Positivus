@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon';
+import { companies } from '@/data/companies';
+---
+
+<section id="logotypes">
+	{companies.map((el) => <Icon name={el} />)}
+</section>
+
+<style>
+	#logotypes {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 0;
+	}
+
+	#logotypes svg {
+		flex: 1 0 20%;
+		margin: 2rem;
+	}
+
+	@media (min-width: 768px) {
+		#logotypes svg {
+			margin: 2.5rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		#logotypes {
+			flex-wrap: nowrap;
+			gap: 3rem;
+		}
+
+		#logotypes svg {
+			flex: auto;
+			margin: 0;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		#logotypes {
+			gap: 7.5rem;
+		}
+	}
+</style>

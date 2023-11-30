@@ -1,4 +1,4 @@
-import type { Testimonal } from "@/interfaces/Testimonal";
+import type { Testimonal } from '@/interfaces/Testimonal';
 
 export const testimonals = [
 	{
@@ -19,4 +19,4 @@ export const testimonals = [
 		name: 'Emily Chen',
 		role: 'Founder, UrbanEats',
 	},
-] as const satisfies Array<Testimonal>
+] as const satisfies Array<Testimonal>;

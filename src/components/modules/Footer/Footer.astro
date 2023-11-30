@@ -1,0 +1,55 @@
+---
+import NavigationPanel from './NavigationPanel.astro';
+import Contact from './Contact.astro';
+import MobileSocials from './MobileSocials.astro';
+import PrivacyPolicy from './PrivacyPolicy.astro';
+---
+
+<footer>
+	<div class="card card-foreground footer__card">
+		<NavigationPanel />
+		<Contact />
+		<MobileSocials />
+
+		<div class="footer__separator"></div>
+
+		<PrivacyPolicy />
+	</div>
+</footer>
+
+<style>
+	footer {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		padding: 0;
+	}
+
+	.footer__card {
+		border-radius: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3.7rem;
+		color: var(--muted-background);
+	}
+
+	.footer__separator {
+		width: 100%;
+		border-bottom: 1px solid var(--muted-background);
+	}
+
+	@media (min-width: 1024px) {
+		footer {
+			padding: 0 10rem;
+		}
+
+		.footer__card {
+			border-top-left-radius: 4.5rem;
+			border-top-right-radius: 4.5rem;
+			flex-direction: column;
+			align-items: center;
+			gap: 5rem;
+			color: var(--muted-background);
+		}
+	}
+</style>

@@ -1,0 +1,14 @@
+---
+import SectionLabel from '@ui/SectionLabel.astro';
+import Pillar from './Pillar.astro';
+import { pillars } from '@/data/pillars';
+import { getSectionById } from '@/utils/getSectionById';
+
+const { id, title, description } = getSectionById('pillars');
+---
+
+<section id={id}>
+	<SectionLabel title={title} description={description} />
+
+	{pillars.map((pillar, index) => <Pillar reverse={index % 2 === 1} {...pillar} />)}
+</section>

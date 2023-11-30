@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
-import type { Service} from "@/interfaces/Service"
-import LinkWithArrow from '@/components/elements/LinkWithArrow.astro';
+import type { Service } from '@/interfaces/Service';
+import LinkWithArrow from '@ui/LinkWithArrow.astro';
 
 interface Props extends Service {}
 
@@ -23,7 +23,7 @@ const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 <style>
 	.service {
 		display: grid;
-		gap: 30px;
+		gap: 3rem;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
@@ -61,7 +61,7 @@ const { title, icon, href, headingVariant, bgColor, ...rest } = Astro.props;
 
 		.service__link {
 			display: flex;
-			margin-top: 40px;
+			margin-top: 4rem;
 			justify-content: flex-start;
 			align-items: flex-start;
 		}

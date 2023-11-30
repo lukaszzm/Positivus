@@ -1,4 +1,4 @@
-import type { Case } from "@interfaces/Case";
+import type { Case } from '@/interfaces/Case';
 
 export const cases = [
 	{

@@ -1,0 +1,23 @@
+---
+import SectionLabel from '@ui/SectionLabel.astro';
+import { Carousel } from '@react/Carousel';
+import { testimonals } from '@/data/testimonals';
+import { getSectionById } from '@/utils/getSectionById';
+
+const { id, title, description } = getSectionById('testimonals');
+---
+
+<section id={id}>
+	<SectionLabel title={title} description={description} />
+
+	<div class="testimonals__container card card-foreground">
+		<Carousel items={testimonals} client:load />
+	</div>
+</section>
+
+<style>
+	.testimonals__container {
+		color: white;
+		padding: 8.4rem 0 6rem 0;
+	}
+</style>

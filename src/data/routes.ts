@@ -1,7 +1,7 @@
-import type { Route } from "@/interfaces/Route";
+import type { Route } from '@/interfaces/Route';
 
 export const routes = [
-    {
+	{
 		label: 'About us',
 		href: '/about-us',
 	},

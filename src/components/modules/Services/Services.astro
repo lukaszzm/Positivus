@@ -1,0 +1,36 @@
+---
+import SectionLabel from '@ui/SectionLabel.astro';
+import Proposal from './Proposal.astro';
+import Service from './Service.astro';
+import { services } from '@/data/services';
+import { getSectionById } from '@/utils/getSectionById';
+
+const { id, title, description } = getSectionById('services');
+---
+
+<section id={id}>
+	<SectionLabel title={title} description={description} />
+
+	<div class="services__container">
+		{services.map((el) => <Service {...el} />)}
+	</div>
+
+	<Proposal />
+</section>
+
+<style>
+	.services__container {
+		display: grid;
+		width: 100%;
+		gap: 3rem;
+	}
+
+	@media (min-width: 768px) {
+	}
+
+	@media (min-width: 1024px) {
+		.services__container {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

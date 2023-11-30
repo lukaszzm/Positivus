@@ -1,0 +1,8 @@
+.radio-wrapper {
+	display: flex;
+	gap: 3.5rem;
+}
+
+input[type='radio'] {
+	accent-color: var(--foreground);
+}

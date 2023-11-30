@@ -1,7 +1,7 @@
-import type { ColorVariant } from "./ColorVariant";
+import type { ColorVariant } from './ColorVariant';
 
 export interface Service {
-    title: string;
+	title: string;
 	icon: string;
 	href: string;
 	bgColor: ColorVariant;

@@ -3,16 +3,13 @@ import { Icon } from 'astro-icon';
 import { companyContact } from '@/data/company-contact';
 import { routes } from '@/data/routes';
 
-
 const { linkedin, facebook, twitter } = companyContact.socials;
 ---
 
 <div class="navigation-panel">
 	<Icon name="logoWhite" class="navigation-panel__logo" />
 	<div class="navigation-panel__links">
-		{routes.map(({href, label}) => (
-			<a href={href}>{label}</a>
-		))}
+		{routes.map(({ href, label }) => <a href={href}>{label}</a>)}
 	</div>
 
 	<div class="navigation-panel__socials">
@@ -34,7 +31,7 @@ const { linkedin, facebook, twitter } = companyContact.socials;
 	.navigation-panel {
 		display: flex;
 		flex-direction: column;
-		gap: 37px;
+		gap: 3.7rem;
 		width: 100%;
 		justify-content: space-between;
 		align-items: center;
@@ -47,7 +44,7 @@ const { linkedin, facebook, twitter } = companyContact.socials;
 	.navigation-panel__links {
 		display: flex;
 		flex-direction: column;
-		gap: 15px;
+		gap: 1.5rem;
 	}
 
 	.navigation-panel__socials {
@@ -55,9 +52,9 @@ const { linkedin, facebook, twitter } = companyContact.socials;
 	}
 
 	.navigation-panel__socials a {
-		width: 35px;
-		height: 35px;
-		padding: 8px;
+		width: 3.5rem;
+		height: 3.5rem;
+		padding: 0.8rem;
 		top: 0;
 		right: 0;
 		border-radius: 50%;
@@ -66,8 +63,8 @@ const { linkedin, facebook, twitter } = companyContact.socials;
 	}
 
 	.navigation-panel__socials svg {
-		width: 20px;
-		height: 20px;
+		width: 2rem;
+		height: 2rem;
 	}
 
 	a {
@@ -88,14 +85,14 @@ const { linkedin, facebook, twitter } = companyContact.socials;
 
 		.navigation-panel__links {
 			flex-direction: row;
-			gap: 30px;
+			gap: 3rem;
 		}
 	}
 
 	@media (min-width: 1280px) {
 		.navigation-panel__socials {
 			display: flex;
-			gap: 15px;
+			gap: 1.5rem;
 		}
 	}
 </style>

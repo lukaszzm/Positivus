@@ -1,7 +1,7 @@
 ---
 import Icon from 'astro-icon';
 import { Image } from 'astro:assets';
-import type { TeamMember } from "@interfaces/TeamMember"
+import type { TeamMember } from '@/interfaces/TeamMember';
 
 interface Props extends TeamMember {}
 
@@ -28,33 +28,33 @@ const { src, name, position, description, linkedinProfile } = Astro.props;
 
 <style>
 	.team-member {
-		padding: 40px 35px;
+		padding: 4rem 3.5rem;
 	}
 
 	.team-member__description {
-		margin-top: 28px;
-		padding-top: 28px;
+		margin-top: 2.8rem;
+		padding-top: 2.8rem;
 		border-top: 1px solid var(--foreground);
 	}
 
 	.team-member__overview {
 		display: flex;
 		position: relative;
-		padding-right: 35px;
-		gap: 20px;
+		padding-right: 3.5rem;
+		gap: 2rem;
 	}
 
 	.team-member__overview__image {
-		border-radius: 25px;
+		border-radius: 2.5rem;
 		border: 1px solid var(--foreground);
-		box-shadow: 3px 3px 0px 0px var(--foreground);
+		box-shadow: 3px 3px 0 0 var(--foreground);
 	}
 
 	.team-member__overview__link {
 		position: absolute;
-		width: 35px;
-		height: 35px;
-		padding: 8px;
+		width: 3.5rem;
+		height: 3.5rem;
+		padding: 0.8rem;
 		top: 0;
 		right: 0;
 		border-radius: 50%;

@@ -1,0 +1,12 @@
+---
+import SectionLabel from '@ui/SectionLabel.astro';
+import Cases from './Cases.astro';
+import { getSectionById } from '@/utils/getSectionById';
+
+const { id, title, description } = getSectionById('use-cases');
+---
+
+<section id={id}>
+	<SectionLabel title={title} description={description} />
+	<Cases />
+</section>

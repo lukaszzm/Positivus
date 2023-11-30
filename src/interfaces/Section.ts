@@ -1,5 +1,5 @@
 export interface Section {
-    id: string
-    title: string
-    description: string
+	id: string;
+	title: string;
+	description: string;
 }

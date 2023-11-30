@@ -1,4 +1,4 @@
-import type { WorkingStep } from "@/interfaces/WorkingStep";
+import type { WorkingStep } from '@/interfaces/WorkingStep';
 
 export const workingSteps = [
 	{
@@ -37,4 +37,4 @@ export const workingSteps = [
 		description:
 			'The digital landscape evolves, and so do we. In this step, we focus on ongoing improvement. We adapt to the changing digital environment, explore new opportunities, and refine our strategies to keep your business ahead of the curve. Your success is our motivation.',
 	},
-] as const satisfies Array<WorkingStep>
+] as const satisfies Array<WorkingStep>;

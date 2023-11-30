@@ -1,7 +1,6 @@
 ---
-import LinkWithArrow from '@/components/elements/LinkWithArrow.astro';
-import { cases } from "@/data/use-cases"
-
+import LinkWithArrow from '@ui/LinkWithArrow.astro';
+import { cases } from '@/data/use-cases';
 ---
 
 <div class="case__wrapper card card-foreground">
@@ -29,11 +28,11 @@ import { cases } from "@/data/use-cases"
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
-		padding: 20px;
-		padding-top: 40px;
+		padding: 2rem;
+		padding-top: 4rem;
 		border-top: 1px solid var(--background);
 		border-bottom: 1px solid var(--background);
-		gap: 20px;
+		gap: 2rem;
 		border-radius: 0;
 	}
 
@@ -51,12 +50,12 @@ import { cases } from "@/data/use-cases"
 		}
 
 		.case__item {
-			padding: 10px 20px;
+			padding: 1rem 2rem;
 			border-right: 1px solid var(--background);
 			border-left: 1px solid var(--background);
 			border-top: none;
 			border-bottom: none;
-			gap: 20px;
+			gap: 2rem;
 		}
 
 		.case__item:first-child {
@@ -72,7 +71,7 @@ import { cases } from "@/data/use-cases"
 
 	@media (min-width: 1280px) {
 		.case__item {
-			padding: 20px 40px;
+			padding: 2rem 4rem;
 		}
 	}
 </style>

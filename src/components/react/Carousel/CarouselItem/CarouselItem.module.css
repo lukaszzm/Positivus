@@ -1,0 +1,28 @@
+.carousel-item {
+	flex: 0 0 100%;
+	min-width: 0;
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.carousel-item__quote {
+	border: 1px solid var(--accent);
+	border-radius: 4.5rem;
+	padding: 5.2rem;
+}
+
+.carousel-item__by {
+	padding: 0 5.2rem;
+}
+
+.carousel-item__by__name {
+	color: var(--accent);
+}
+
+@media (min-width: 768px) {
+	.carousel-item {
+		padding: 0 20%;
+	}
+}

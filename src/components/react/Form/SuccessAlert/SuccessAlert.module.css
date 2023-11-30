@@ -1,0 +1,10 @@
+.alert {
+	background-color: var(--success);
+	border-radius: 1.5rem;
+	width: 100%;
+	padding: 2rem;
+}
+
+.alert p {
+	color: var(--foreground);
+}

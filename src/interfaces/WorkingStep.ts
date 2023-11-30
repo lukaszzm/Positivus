@@ -1,5 +1,5 @@
 export interface WorkingStep {
-    number: string
-    title: string
-    description: string
+	number: string;
+	title: string;
+	description: string;
 }
