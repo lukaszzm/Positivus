@@ -1,8 +1,21 @@
 .radio-wrapper {
 	display: flex;
-	gap: 3.5rem;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 input[type='radio'] {
 	accent-color: var(--foreground);
+}
+
+@media (min-width: 375px) {
+	.radio-wrapper {
+		flex-direction: row;
+	}
+}
+
+@media (min-width: 768px) {
+	.radio-wrapper {
+		gap: 3.5rem;
+	}
 }
