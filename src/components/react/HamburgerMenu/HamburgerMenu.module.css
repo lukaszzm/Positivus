@@ -7,6 +7,7 @@
 	background: none;
 	border: none;
 	font-size: 4rem;
+	color: var(--foreground);
 }
 
 .menu__container {

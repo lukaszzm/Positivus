@@ -15,7 +15,7 @@ const { iconPosition = 'left', textColor = 'accent', iconColor = 'accent', iconB
 ---
 
 <a href={href} class:list={[`icon-${iconPosition}`, `text-${textColor}`]} aria-label={ariaLabel}>
-	<Icon name="mi:arrow-right-up" class:list={['icon', `icon-${iconColor}`, `icon-bg-${iconBackground}`]} />
+	<Icon name="mi:arrow-right-up" class:list={['icon', `icon-${iconColor}`, `icon-bg-${iconBackground}`]} width={50} height={50} />
 	<span>
 		<slot />
 	</span>
@@ -42,7 +42,6 @@ const { iconPosition = 'left', textColor = 'accent', iconColor = 'accent', iconB
 	}
 
 	.icon {
-		width: 4.5rem;
 		border-radius: 50%;
 	}
 

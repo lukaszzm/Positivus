@@ -19,6 +19,7 @@
 	background: transparent;
 	text-align: left;
 	gap: 1.5rem;
+	color: var(--foreground);
 }
 
 .number {
@@ -30,7 +31,7 @@
 }
 
 .icon {
-	font-size: 3rem;
+	min-width: 2rem;
 	margin-left: auto;
 }
 
