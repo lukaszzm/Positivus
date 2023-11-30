@@ -1,5 +1,6 @@
 <h1 align="center">
-  <img alt="Positivus logo" src="https://raw.githubusercontent.com/lukaszzm/positivus/483fc44de38664e62774cbcd43007595baf59450/src/icons/logo.svg" width="60px"/><br/>
+  <img alt="Positivus logo" src="https://raw.githubusercontent.com/lukaszzm/positivus/69630c4d5630752416ddc083bc11debeef002e56/public/favicon.svg" width="60px"/><br/>
+  Positivus
 </h1>
 <p align="center">Landing page written in Astro.</p>
 <p align="center">
